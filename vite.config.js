@@ -1,12 +1,12 @@
-// @ts-check
-import reactPlugin from 'vite-plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import dotenv from 'dotenv';
 
-/**
- * @type { import('vite').UserConfig }
- */
-const config = {
-  jsx: 'react',
-  plugins: [reactPlugin]
-}
+dotenv.config();
 
-export default config
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: process.env.VITE_PORT,
+  },
+});
