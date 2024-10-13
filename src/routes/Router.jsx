@@ -1,25 +1,29 @@
-import React from "react"; 
+import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import { ErrorPage, LandingPage, NotFoundPage } from "../Pages";
+import { AdmissionPage, ErrorPage, LandingPage, NotFoundPage } from "../Pages";
 import App from "../App";
 
 export const router = createBrowserRouter([
   {
-    path: "/", 
+    path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",  
-        element: <LandingPage />,  
-      },
-      {
-        path: "/home",  
+        path: "/",
         element: <LandingPage />,
       },
       {
-        path: "*",  
-        element: <NotFoundPage />,  
+        path: "/home",
+        element: <LandingPage />,
+      },
+      {
+        path: "/application",
+        element: <AdmissionPage />,
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />,
       },
     ],
   },
