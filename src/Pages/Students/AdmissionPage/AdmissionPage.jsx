@@ -1,5 +1,6 @@
 import React from "react";
 import { BreadcrumbsComponent } from "../../../Components";
+import { Container } from "@mui/material";
 
 const AdmissionPage = () => {
   const breadcrumbs = [
@@ -10,7 +11,9 @@ const AdmissionPage = () => {
   return (
     <div>
       <BreadcrumbsComponent title="Admission Form" breadcrumbs={breadcrumbs} />
-      <div className="p-6 bg-[#FFFFFF] h-screen"></div>
+      <Container maxWidth="lg">
+        <div style={{ padding: "" }} className="bg-[var(--bg-color)]">grsd</div>
+      </Container>
     </div>
   );
 };

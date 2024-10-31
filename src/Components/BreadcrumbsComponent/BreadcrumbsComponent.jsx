@@ -11,6 +11,8 @@ const BreadcrumbsComponent = ({ title, breadcrumbs }) => {
     <Box
       sx={{
         backgroundImage: `url(${breadcrumbsBg})`,
+        backgroundRepeat: "no-repeat",
+        backgroundColor: "#3B302A",
         backgroundSize: "cover",
         backgroundPosition: "center",
         color: "#fff",

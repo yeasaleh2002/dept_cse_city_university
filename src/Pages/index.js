@@ -12,7 +12,7 @@ export const NotFoundPage = withSuspense(
 
 // Students pages
 export const AdmissionPage = withSuspense(
-  lazy(() => import("./Students/ErrorPage/AdmissionPage"))
+  lazy(() => import("./Students/AdmissionPage/AdmissionPage"))
 );
 
 // Teachers pages
