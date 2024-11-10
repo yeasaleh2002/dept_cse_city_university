@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="p-6">
+      <div className="">
         <Outlet />
       </div>
       <Footer />
