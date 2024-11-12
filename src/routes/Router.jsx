@@ -45,6 +45,7 @@ import {
 } from "../Pages";
 import App from "../App";
 import LoginPage from "../Pages/Students/Login";
+import AdminTeacherList from "../Pages/Admin/AdminTeacherList/AdminTeacherList";
 
 export const router = createBrowserRouter([
   {
@@ -170,23 +171,23 @@ export const router = createBrowserRouter([
         element: <AdminClass_test_Lab_List />,
       },
       {
-        path: "/admin/edit-batch",
+        path: "/admin/edit-batch/:id",
         element: <AdminEditBatch />,
       },
       {
-        path: "/admin/edit-routine",
+        path: "/admin/edit-routine/:id",
         element: <AdminEditRoutine />,
       },
       {
-        path: "/admin/edit-student",
+        path: "/admin/edit-student/:id",
         element: <AdminEditStudent />,
       },
       {
-        path: "/admin/edit-subject",
+        path: "/admin/edit-subject/:id",
         element: <AdminEditSubject />,
       },
       {
-        path: "/admin/edit-teacher",
+        path: "/admin/edit-teacher/:id",
         element: <AdminEditTeacher />,
       },
       {
@@ -208,6 +209,10 @@ export const router = createBrowserRouter([
       {
         path: "/admin/subject-list",
         element: <AdminSubjectList />,
+      },
+      {
+        path: "/admin/teacher-list",
+        element: <AdminTeacherList />,
       },
       {
         path: "/admin/admission-approval-list",
