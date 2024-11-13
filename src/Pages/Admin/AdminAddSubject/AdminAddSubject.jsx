@@ -12,7 +12,7 @@ const RequiredLabel = styled("label")(({ theme }) => ({
   },
 }));
 
-const AdminEditSubject = () => {
+const AdminAddSubject = () => {
   const [formData, setFormData] = useState({
     name: "",
     courseCode: "",
@@ -42,7 +42,7 @@ const AdminEditSubject = () => {
   return (
     <Container maxWidth="sm" sx={{ padding: 2 }}>
       <Typography variant="h4" gutterBottom>
-        Edit Subject
+        Add New Subject
       </Typography>
 
       <Box mb={2}>
@@ -72,10 +72,10 @@ const AdminEditSubject = () => {
       </Box>
 
       <Button variant="contained" color="primary" fullWidth onClick={handleSubmit}>
-        Save Changes
+        Submit
       </Button>
     </Container>
   );
 };
 
-export default AdminEditSubject;
+export default AdminAddSubject;

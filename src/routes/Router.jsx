@@ -42,6 +42,7 @@ import {
   ViewStudentResult,
   PostStudentResult,
   EditStudentResult,
+  AdminAddSubject,
 } from "../Pages";
 import App from "../App";
 import LoginPage from "../Pages/Students/Login";
@@ -161,6 +162,10 @@ export const router = createBrowserRouter([
       {
         path: "/admin/add-teacher",
         element: <AdminAddTeacher />,
+      },
+      {
+        path: "/admin/add-subject",
+        element: <AdminAddSubject />,
       },
       {
         path: "/admin/batch-list",

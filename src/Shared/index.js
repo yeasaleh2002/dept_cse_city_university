@@ -769,3 +769,41 @@ export const teacherList = [
     address: "909 Earth Lane, EcoCity",
   },
 ];
+
+export const batchList = [
+  {
+    batchName: "Batch A",
+    courseCode: "CSE101",
+    startDate: "2023-01-15",
+    endDate: "2024-01-15",
+    totalStudents: 50,
+  },
+  {
+    batchName: "Batch B",
+    courseCode: "CSE102",
+    startDate: "2023-02-01",
+    endDate: "2024-02-01",
+    totalStudents: 45,
+  },
+  {
+    batchName: "Batch C",
+    courseCode: "CSE103",
+    startDate: "2023-03-01",
+    endDate: "2024-03-01",
+    totalStudents: 60,
+  },
+  {
+    batchName: "Batch D",
+    courseCode: "CSE104",
+    startDate: "2023-04-10",
+    endDate: "2024-04-10",
+    totalStudents: 40,
+  },
+  {
+    batchName: "Batch E",
+    courseCode: "CSE105",
+    startDate: "2023-05-15",
+    endDate: "2024-05-15",
+    totalStudents: 55,
+  },
+];

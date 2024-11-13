@@ -178,3 +178,7 @@ export const EditStudentResult = withSuspense(
 export const PostStudentResult = withSuspense(
   lazy(() => import("./Admin/PostStudentResult/PostStudentResult"))
 );
+
+export const AdminAddSubject = withSuspense(
+  lazy(() => import("./Admin/AdminAddSubject/AdminAddSubject"))
+);
