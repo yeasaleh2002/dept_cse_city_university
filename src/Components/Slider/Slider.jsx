@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { IconButton, Typography, Button, Box } from '@mui/material';
 import {ArrowBackIosIcon, ArrowForwardIosIcon} from '@mui/icons-material';
 import { Slide_1, Slide_2, Slide_3 } from '../../assets/images';
+// import { Slide_1, Slide_2, Slide_3 } from '../../assets/images';
 
 const slides = [
   {
