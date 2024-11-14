@@ -1,3 +1,3 @@
-import { withSuspense } from "../../Utils/withSuspense";
+import Footer from "./Footer"; 
 
-export const Footer = withSuspense(lazy(() => import("./Footer")));
+export default Footer;

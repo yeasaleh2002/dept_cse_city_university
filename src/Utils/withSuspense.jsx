@@ -1,17 +1,14 @@
-import React, { Suspense, memo, lazy } from 'react';
+import React, { Suspense, memo } from 'react';
 
 /**
- * @param {() => Promise<{ default: React.ComponentType<any> }>} importFunc - the lazy import function for the component.
- * @param {React.ReactNode} FallbackComponent - show while the component is loading.
+ * @param {React.Component} WrappedComponent -  wraping lazy component.
+ * @param {React.ReactNode} FallbackComponent -  show while component is loading.
  */
 
-export const withSuspense = (importFunc, FallbackComponent = (<div>Loading...</div>)) => {
-  const LazyComponent = lazy(importFunc); // Lazy load inside the HOC
-
-  return memo((props) => (
+export const withSuspense = (WrappedComponent, FallbackComponent = (<div>Loading...</div>)) =>
+  memo((props) => (
     <Suspense fallback={FallbackComponent}>
-      <LazyComponent {...props} />
+      <WrappedComponent {...props} />
     </Suspense>
   ));
-};
 
