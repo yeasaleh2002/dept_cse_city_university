@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { IconButton, Typography, Button, Box } from '@mui/material';
-import {ArrowBackIosIcon, ArrowForwardIosIcon} from '@mui/icons-material';
-import { Slide_1, Slide_2, Slide_3 } from '../../assets/images';
+import { edu_slide_img_1, edu_slide_img_2, edu_slide_img_3 } from '../../assets/images';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 const slides = [
   {
     id: 1,
-    image: Slide_1,
+    image: edu_slide_img_1,
     heading: 'Welcome to Slide 1',
   },
   {
     id: 2,
-    image: Slide_2,
+    image: edu_slide_img_2,
     heading: 'Explore Slide 2',
   },
   {
     id: 3,
-    image: Slide_3,
+    image: edu_slide_img_3,
     heading: 'Discover Slide 3',
   },
 ];
@@ -105,7 +106,7 @@ const Slider = () => {
           color: 'white',
         }}
       >
-        <ArrowBackIosIcon />
+        <KeyboardArrowLeftIcon />
       </IconButton>
 
       <IconButton
@@ -118,7 +119,7 @@ const Slider = () => {
           color: 'white',
         }}
       >
-        <ArrowForwardIosIcon />
+        <KeyboardArrowRightIcon />
       </IconButton>
     </Box>
   );
