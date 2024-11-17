@@ -111,6 +111,10 @@ export const AdminBatchList = withSuspense(
   lazy(() => import("./Admin/AdminBatchList/AdminBatchList"))
 );
 
+export const AdminTeacherList = withSuspense(
+  lazy(() => import("./Admin/AdminTeacherList/AdminTeacherList"))
+);
+
 export const AdminClass_test_Lab_List = withSuspense(
   lazy(() =>
     import("./Admin/AdminClass_test_Lab_List/AdminClass_test_Lab_List")

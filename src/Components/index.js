@@ -10,4 +10,6 @@ export const BreadcrumbsComponent = withSuspense(
 export const LoginForm = withSuspense(lazy(() => import("./LoginForm")));
 export const HeroSection = withSuspense(lazy(() => import("./LandingPage/HeroSection")));
 export const Slider = withSuspense(lazy(() => import("./Slider")));
+export const ResponsiveDrawer = withSuspense(lazy(() => import("./ResponsiveDrawer")));
+export const AdminDashboardContent = withSuspense(lazy(() => import("./AdminDashboardContent")));
 
