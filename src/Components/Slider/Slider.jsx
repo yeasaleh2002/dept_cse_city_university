@@ -25,7 +25,6 @@ const slides = [
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Automatic slide change every 5 seconds
   useEffect(() => {
     const slideTimer = setTimeout(() => {
       nextSlide();
@@ -50,7 +49,7 @@ const Slider = () => {
         overflow: 'hidden',
       }}
     >
- 
+      {console.log(slides[currentSlide])}
       <Box
         sx={{
           backgroundImage: `url(${slides[currentSlide].image})`,
