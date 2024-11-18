@@ -12,4 +12,9 @@ export const HeroSection = withSuspense(lazy(() => import("./LandingPage/HeroSec
 export const Slider = withSuspense(lazy(() => import("./Slider")));
 export const ResponsiveDrawer = withSuspense(lazy(() => import("./ResponsiveDrawer")));
 export const AdminDashboardContent = withSuspense(lazy(() => import("./AdminDashboardContent")));
+export const Activites = withSuspense(lazy(() => import("./Activities")));
+export const AboutSection = withSuspense(lazy(() => import("./LandingPage/AboutSection")));
+export const AboutUs = withSuspense(lazy(() => import("./AboutUs")));
+export const AboutInfos = withSuspense(lazy(() => import("./AboutInfos")));
+
 

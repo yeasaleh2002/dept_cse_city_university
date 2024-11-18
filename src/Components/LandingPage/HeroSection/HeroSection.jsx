@@ -1,15 +1,12 @@
-import React, { Suspense } from 'react';
-import Slider from '../../Slider/Slider';
+import React from 'react';
 import { Box } from '@mui/material';
-import Activites from '../../Activities/Activites';
-// import { Slider } from '../..';
-// import Slider from '../../Slider';
+import { Slider, Activites } from '../..';
 
 const HeroSection = () => {
   return (
     <Box>
-      <Slider /> 
-      <Box maxWidth="xl" marginLeft="auto" marginTop={-12}> 
+      <Slider />
+      <Box maxWidth="xl" marginLeft="auto" marginTop={-12}>
         <Activites />
       </Box>
     </Box>

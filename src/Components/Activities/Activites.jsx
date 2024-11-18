@@ -67,7 +67,11 @@ const Activites = () => (
               marginRight: 2,
             }}
           >
-            <img src={item.icon} alt={item.title} style={{ width: 50, height: 50, margin: 10 }} />
+            <img
+              src={item.icon}
+              alt={item.title}
+              style={{ width: 50, height: 50, margin: 10 }}
+            />
           </Box>
           <Typography
             variant="h2"
