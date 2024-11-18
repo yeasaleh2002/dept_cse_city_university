@@ -1,10 +1,10 @@
 import React from 'react';
-import { HeroSection, Slider } from '../../../Components';
+import { HeroSection } from '../../../Components';
 
 const LandingPage = () => {
   return (
     <div>
-      <Slider />
+      {/* <Slider /> */}
       <HeroSection />
       <h2>This is the main LandingPage</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla totam cupiditate optio deleniti quas earum recusandae culpa explicabo, repellendus praesentium fugit? Neque optio dicta quam ab, eaque facilis corrupti sunt.</p>
