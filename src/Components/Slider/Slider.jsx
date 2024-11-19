@@ -1,45 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import { IconButton, Typography, Button, Box } from '@mui/material';
-import { edu_slide_img_1, edu_slide_img_2, edu_slide_img_3 } from '../../assets/images';
+import { bg_slide_1, bg_slide_2, bg_slide_3 } from '../../assets/images';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import SchoolIcon from '@mui/icons-material/School';
 
 const slides = [
   {
     id: 1,
-    image: edu_slide_img_1,
-    heading: 'Welcome to Slide 1',
+    image: bg_slide_1,
+    subheading: 'Welcome to City University !',
+    heading: 'The University of $Culture and Excellence',
+    description: "Explore a diverse range of programs designed to foster creativity and innovation."
   },
   {
     id: 2,
-    image: edu_slide_img_2,
-    heading: 'Explore Slide 2',
+    image: bg_slide_2,
+    subheading: 'Join Our Community !',
+    heading: 'A Place for $Growth and Learning',
+    description: "Become part of a vibrant community that encourages collaboration and personal development."
   },
   {
     id: 3,
-    image: edu_slide_img_3,
-    heading: 'Discover Slide 3',
+    image: bg_slide_3,
+    subheading: 'Your Future Starts Here !',
+    heading: 'Empowering Students for $Success',
+    description: "We provide the tools and resources you need to achieve your academic and career goals."
   },
 ];
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Automatic slide change every 5 seconds
   useEffect(() => {
-    const slideTimer = setTimeout(() => {
-      nextSlide();
-    }, 5000);
+    const slideTimer = setTimeout(nextSlide, 5000);
     return () => clearTimeout(slideTimer);
   }, [currentSlide]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
     <Box
@@ -48,16 +47,17 @@ const Slider = () => {
         width: '100%',
         height: '600px',
         overflow: 'hidden',
+        backgroundPosition: 'center'
       }}
     >
- 
       <Box
         sx={{
           backgroundImage: `url(${slides[currentSlide].image})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          filter: 'blur(5px)',
-          boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 0.5)',
+          filter: 'blur(4px) grayscale(80%)',
+          boxShadow: 'inset 0 0 20px rgba(0, 0, 0, 1)',
+          backgroundColor: 'rgba(0, 0, 0, 0.95)',
           position: 'absolute',
           top: 0,
           left: 0,
@@ -67,14 +67,17 @@ const Slider = () => {
         }}
       />
 
-    
       <Box
+        maxWidth="lg"
+        marginX="auto"
         sx={{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: slides[currentSlide].id % 2 === 0 ? 'flex-start' : 'flex-end',
           height: '100%',
           padding: '0 40px',
+          gap: 2,
+          paddingLeft: 0,
+          paddingRight: 0
         }}
       >
         <Box
@@ -84,18 +87,77 @@ const Slider = () => {
             textAlign: slides[currentSlide].id % 2 === 0 ? 'left' : 'right',
           }}
         >
-          <Typography variant="h2" fontWeight="bold" mb={2}>
-            {slides[currentSlide].heading}
+          <Typography
+            sx={{
+              color: '#FDA31B',
+              fontWeight: "600",
+              borderBottom: "2px #FDA31B solid",
+              display: 'inline-flex',
+              gap: 1,
+              alignItems: "center"
+            }}
+            variant="h6"
+          >
+            <SchoolIcon sx={{ color: '#FDA31B' }} /> {slides[currentSlide].subheading}
           </Typography>
-          <Button variant="contained" color="primary" sx={{ mr: 2 }}>
-            Learn More
-          </Button>
-          <Button variant="outlined" color="secondary">
-            Contact Us
-          </Button>
+
+          <Typography variant="h2" fontWeight="bold" mb={2}>
+            {slides[currentSlide].heading.split(' ').map((part, index) => (
+              <span key={index}>
+                {part.includes("$") ? (
+                  <span style={{ color: '#FDA31B' }}>{part.replace('$', '')}</span>
+                ) : part} &nbsp;
+              </span>
+            ))}
+          </Typography>
+
+          <Typography variant="body1" mb={2}>
+            {slides[currentSlide].description}
+          </Typography>
+          <Box sx={{ display: "flex", justifyContent: "end", gap: 3 }}>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: '#FDA31B',
+                color: 'white',
+                borderRadius: '50px',
+                borderBottomLeftRadius: 0,
+                padding: '12px 24px',
+                fontWeight: 'bold',
+                position: 'relative',
+                overflow: 'hidden',
+                '&:hover': {
+                  backgroundColor: '#C68A1B',
+                },
+              }}
+              endIcon={<KeyboardArrowRightIcon sx={{ color: 'white' }} />}
+            >
+              Learn More
+            </Button>
+            <Button
+              variant="outlined"
+              sx={{
+                backgroundColor: 'white',
+                color: '#4A4A4A',
+                borderRadius: '50px',
+                borderBottomLeftRadius: 0,
+                padding: '12px 24px',
+                fontWeight: 'bold',
+                position: 'relative',
+                overflow: 'hidden',
+                '&:hover': {
+                  backgroundColor: 'whitesmoke',
+                  opacity: 1,
+                },
+              }}
+              endIcon={<KeyboardArrowRightIcon sx={{ color: '#4A4A4A' }} />}
+            >
+              Contact Us
+            </Button>
+          </Box>
         </Box>
       </Box>
- 
+
       <IconButton
         onClick={prevSlide}
         sx={{
@@ -103,7 +165,13 @@ const Slider = () => {
           top: '50%',
           left: '20px',
           transform: 'translateY(-50%)',
-          color: 'white',
+          backgroundColor: 'rgba(63, 73, 90, 0.6)',
+          borderRadius: '50%',
+          color: 'black',
+          '&:hover': {
+            backgroundColor: 'white',
+            opacity: 1,
+          },
         }}
       >
         <KeyboardArrowLeftIcon />
@@ -116,7 +184,13 @@ const Slider = () => {
           top: '50%',
           right: '20px',
           transform: 'translateY(-50%)',
-          color: 'white',
+          backgroundColor: 'rgba(63, 73, 90, 0.6)',
+          borderRadius: '50%',
+          color: 'black',
+          '&:hover': {
+            backgroundColor: 'white',
+            opacity: 1,
+          },
         }}
       >
         <KeyboardArrowRightIcon />

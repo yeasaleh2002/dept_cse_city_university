@@ -1,14 +1,15 @@
-import React, { Suspense } from 'react';
-// import { Slider } from '../..';
-// import Slider from '../../Slider';
+import React from 'react';
+import { Box } from '@mui/material';
+import { Slider, Activites } from '../..';
 
 const HeroSection = () => {
   return (
-    <div>
-      {/* <Suspense fallback={<div>Loading...</div>}> */}
-      {/* <Slider />  */}
-      {/* </Suspense> */}
-    </div>
+    <Box>
+      <Slider />
+      <Box maxWidth="xl" marginLeft="auto" marginTop={-12}>
+        <Activites />
+      </Box>
+    </Box>
   );
 };
 
