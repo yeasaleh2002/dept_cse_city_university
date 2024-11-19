@@ -9,7 +9,7 @@ import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 
 const AboutUs = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, background: "#FFFFFF" }}>
       <Grid container spacing={10}>
         <Grid size={{ xs: 12, md: 6 }}>
           <Box
