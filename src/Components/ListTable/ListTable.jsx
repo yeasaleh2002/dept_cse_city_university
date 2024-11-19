@@ -9,6 +9,10 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import ViewModal from "../ViewModal";
 
 export default function ListTable({
   columns,
@@ -25,6 +29,20 @@ export default function ListTable({
   deleteItem,
 }) {
   const navigate = useNavigate();
+  const [open, setOpen] = React.useState(false);
+  const [modalData, setModalData] = React.useState(null);
+  const [modalTitle, setModalTitle] = React.useState("");
+
+  const handleOpenModal = (row) => {
+    setModalData(row);
+    setModalTitle("Details for " + (row.batchName || "Record"));
+    setOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpen(false);
+    setModalData(null);
+  };
 
   const handleDelete = (row) => {
     deleteItem(row);
@@ -54,7 +72,6 @@ export default function ListTable({
     return isDate ? new Date(value).toLocaleDateString() : value;
   };
 
-
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
       <TableContainer sx={{ maxHeight: 440 }}>
@@ -83,7 +100,10 @@ export default function ListTable({
                   {columns.map((column) => {
                     const value = row[column.accessor];
                     return (
-                      <TableCell key={column.accessor} align={column.align || "left"}>
+                      <TableCell
+                        key={column.accessor}
+                        align={column.align || "left"}
+                      >
                         {Array.isArray(value)
                           ? formatArray(value, column.subAccessors)
                           : column.format
@@ -93,32 +113,33 @@ export default function ListTable({
                     );
                   })}
                   {(enableEdit || enableDelete || enableView) && (
-                    <TableCell align="center" style={{ display: "flex", gap: "8px", justifyContent: "center" }}>
+                    <TableCell
+                      align="center"
+                      style={{
+                        display: "flex",
+                        gap: "8px",
+                        justifyContent: "center",
+                      }}
+                    >
                       {enableView && (
                         <Button
-                          variant="outlined"
                           color="primary"
-                          onClick={() => navigate(`${view_url}/${row.id}`)}
+                          onClick={() => handleOpenModal(row)}
                         >
-                          View
+                          <VisibilityIcon />
                         </Button>
                       )}
                       {enableEdit && (
                         <Button
-                          variant="outlined"
                           color="secondary"
                           onClick={() => navigate(`${edit_url}/${row.id}`)}
                         >
-                          Edit
+                          <EditIcon />
                         </Button>
                       )}
                       {enableDelete && (
-                        <Button
-                          variant="outlined"
-                          color="error"
-                          onClick={() => handleDelete(row)}
-                        >
-                          Delete
+                        <Button color="error" onClick={() => handleDelete(row)}>
+                          <DeleteIcon />
                         </Button>
                       )}
                     </TableCell>
@@ -137,6 +158,17 @@ export default function ListTable({
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
+      {/* Modal Integration */}
+      {modalData && (
+        <ViewModal
+          open={open}
+          handleClose={handleCloseModal}
+          title={modalTitle}
+          data={modalData}
+          columns={columns}
+        />
+      )}
+
     </Paper>
   );
 }

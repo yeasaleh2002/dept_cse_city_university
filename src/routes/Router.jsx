@@ -107,7 +107,7 @@ export const router = createBrowserRouter([
           { path: "teacher-list", element: <AdminTeacherList /> },
           { path: "subject-list", element: <AdminSubjectList /> },
           { path: "admission-approval-list", element: <AdmissionApprovalList /> },
-          { path: "edit-student-result", element: <EditStudentResult /> },
+          { path: "edit-student-result/:id", element: <EditStudentResult /> },
           { path: "post-student-result", element: <PostStudentResult /> },
         ],
       },

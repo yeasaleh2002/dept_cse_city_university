@@ -8,7 +8,7 @@ const RequiredLabel = styled("label")(({ theme }) => ({
   marginBottom: theme.spacing(0.5),
   "&::after": {
     content: '" *"',
-    color: theme.palette.error.main,
+    color: theme.palette.error,
   },
 }));
 

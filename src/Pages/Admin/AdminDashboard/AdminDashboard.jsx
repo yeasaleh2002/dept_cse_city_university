@@ -29,6 +29,7 @@ const adminRoutes = [
   { path: "subject-list", label: "Subject List" },
   { path: "teacher-list", label: "Teacher List" },
   { path: "admission-approval-list", label: "Admission Approval List" },
+  { path: "", label: "Logout" },
 ];
 
 function AdminDashboard(props) {
@@ -50,7 +51,7 @@ function AdminDashboard(props) {
           <ListItem key={route.path} disablePadding>
             <ListItemButton
               selected={location.pathname.includes(route.path)}
-              onClick={() => navigate(`/admin/${route.path}`)}
+              onClick={() => navigate(route.path === "" ? "/" : `/admin/${route.path}`)}
             >
               <ListItemText primary={route.label} />
             </ListItemButton>
@@ -76,6 +77,7 @@ function AdminDashboard(props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
+          backgroundColor: "#116E63",
         }}
       >
         <Toolbar>

@@ -8,7 +8,7 @@ const RequiredLabel = styled("label")(({ theme }) => ({
   marginBottom: theme.spacing(0.5),
   "&::after": {
     content: '" *"',
-    color: theme.palette.error.main,
+    color: theme.palette.error,
   },
 }));
 
@@ -80,8 +80,7 @@ const AdminAddRoutine = () => {
 
       {/* Submit Button */}
       <Button
-        variant="contained"
-        color="primary"
+        sx={{ backgroundColor: "#116E63", color: "white" }}
         fullWidth
         onClick={handleSubmit}
       >

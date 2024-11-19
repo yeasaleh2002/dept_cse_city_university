@@ -7,11 +7,11 @@ const AdminSemisterApprovalList = () => {
 
   // Sample data for semester approvals
   const semesterApprovalList = [
-    { name: "John Doe", semester: "Spring 2024", batch: "Batch A", status: "Pending" },
-    { name: "Jane Smith", semester: "Fall 2023", batch: "Batch B", status: "Approved" },
-    { name: "Sam Wilson", semester: "Spring 2024", batch: "Batch A", status: "Pending" },
-    { name: "Emily Brown", semester: "Fall 2023", batch: "Batch C", status: "Approved" },
-    { name: "David Lee", semester: "Spring 2024", batch: "Batch D", status: "Pending" },
+    { id: 1, name: "John Doe", semester: "Spring 2024", batch: "Batch A", status: "Pending" },
+    { id: 2, name: "Jane Smith", semester: "Fall 2023", batch: "Batch B", status: "Approved" },
+    { id: 3, name: "Sam Wilson", semester: "Spring 2024", batch: "Batch A", status: "Pending" },
+    { id: 4, name: "Emily Brown", semester: "Fall 2023", batch: "Batch C", status: "Approved" },
+    { id: 5, name: "David Lee", semester: "Spring 2024", batch: "Batch D", status: "Pending" },
   ];
 
   const columns = [
@@ -23,6 +23,10 @@ const AdminSemisterApprovalList = () => {
 
   return (
     <div>
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-bold">Semester Approval List</h1>
+       
+      </div>
       <ListTable
         columns={columns}
         rows={semesterApprovalList}
@@ -30,11 +34,10 @@ const AdminSemisterApprovalList = () => {
         page={page}
         setRowsPerPage={setRowsPerPage}
         setPage={setPage}
-        enableEdit={true}
-        enableDelete={true}
+        enableEdit={false}
+        enableDelete={false}
         enableView={true}
-        edit_url={"edit-semester-approval"}
-        view_url={"view-semester-approval"}
+        edit_url={"/admin/edit-semester-approval"}
         deleteItem={() => {}}
       />
     </div>

@@ -5,14 +5,13 @@ import {
   Button,
   Typography,
   FormControl,
-  InputLabel,
   Select,
   MenuItem,
   Stack,
   Box,
 } from "@mui/material";
-import { DatePicker } from "@mui/x-date-pickers";
 import { styled } from "@mui/system";
+import { DatePicker } from "@mui/x-date-pickers";
 
 const RequiredLabel = styled("label")(({ theme }) => ({
   display: "block",
@@ -20,7 +19,7 @@ const RequiredLabel = styled("label")(({ theme }) => ({
   marginBottom: theme.spacing(0.5),
   "&::after": {
     content: '" *"',
-    color: theme.palette.error.main,
+    color: theme.palette.error,
   },
 }));
 
@@ -258,7 +257,7 @@ const AdminEditStudent = () => {
           </Box>
         </Stack>
 
-        <Button variant="contained" color="primary" fullWidth onClick={handleSubmit}>
+        <Button sx={{ backgroundColor: "#116E63", color: "white" }} fullWidth onClick={handleSubmit}>
           Save Changes
         </Button>
       </Stack>

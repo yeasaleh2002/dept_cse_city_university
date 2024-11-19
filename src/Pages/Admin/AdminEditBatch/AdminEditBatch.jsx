@@ -8,7 +8,7 @@ const RequiredLabel = styled("label")(({ theme }) => ({
   marginBottom: theme.spacing(0.5),
   "&::after": {
     content: '" *"',
-    color: theme.palette.error.main,
+    color: theme.palette.error,
   },
 }));
 
@@ -43,10 +43,8 @@ const AdminEditBatch = () => {
       </Box>
 
       <Button
-        variant="contained"
-        color="primary"
+        sx={{ backgroundColor: "#116E63", color: "white", marginTop: 2 }}
         onClick={handleSubmit}
-        sx={{ marginTop: 2 }}
       >
         Update
       </Button>

@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import ListTable from "../../../Components/ListTable";
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const AdminSubjectList = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-
+  const navigate = useNavigate();
   // Sample data for subjects
   const subjectList = [
-    { subjectName: "Mathematics", courseCode: "MTH101" },
-    { subjectName: "Physics", courseCode: "PHY101" },
-    { subjectName: "Chemistry", courseCode: "CHM101" },
-    { subjectName: "Biology", courseCode: "BIO101" },
-    { subjectName: "Computer Science", courseCode: "CSE101" },
+    { id: 1, subjectName: "Mathematics", courseCode: "MTH101" },
+    { id: 2, subjectName: "Physics", courseCode: "PHY101" },
+    { id: 3, subjectName: "Chemistry", courseCode: "CHM101" },
+    { id: 4, subjectName: "Biology", courseCode: "BIO101" },
+    { id: 5, subjectName: "Computer Science", courseCode: "CSE101" },
   ];
 
   const columns = [
@@ -21,6 +23,15 @@ const AdminSubjectList = () => {
 
   return (
     <div>
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-bold">Subject List</h1>
+        <Button
+          sx={{ backgroundColor: "#116E63", color: "white" }}
+          onClick={() => navigate("/admin/add-subject")}
+        >
+          Add Subject
+        </Button>
+      </div>
       <ListTable
         columns={columns}
         rows={subjectList}
@@ -31,7 +42,7 @@ const AdminSubjectList = () => {
         enableEdit={true}
         enableDelete={true}
         enableView={true}
-        edit_url={"edit-subject"}
+        edit_url={"/admin/edit-subject"}
         view_url={"view-subject"}
         deleteItem={() => {}}
       />

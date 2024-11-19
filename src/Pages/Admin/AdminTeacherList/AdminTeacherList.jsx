@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import ListTable from "../../../Components/ListTable";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
 import { teacherList } from "../../../Shared";
+import ListTable from "../../../Components/ListTable";
 
 const AdminTeacherList = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
+  const navigate = useNavigate();
 
   const columns = [
     { title: "Name", accessor: "name" },
@@ -24,6 +27,12 @@ const AdminTeacherList = () => {
 
   return (
     <div>
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-bold">Teacher List</h1>
+        <Button sx={{ backgroundColor: "#116E63", color: "white" }} onClick={() => navigate("/admin/add-teacher")}>
+          Add Teacher
+        </Button>
+      </div>
       <ListTable
         columns={columns}
         rows={teacherList}
@@ -35,7 +44,6 @@ const AdminTeacherList = () => {
         enableDelete={true}
         enableView={true}
         view_url="/admin/teachers/view"
-        edit_url="/admin/teachers/edit"
         deleteItem={handleDelete}
       />
     </div>

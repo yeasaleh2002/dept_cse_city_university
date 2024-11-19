@@ -8,7 +8,7 @@ const RequiredLabel = styled("label")(({ theme }) => ({
   marginBottom: theme.spacing(0.5),
   "&::after": {
     content: '" *"',
-    color: theme.palette.error.main,
+    color: theme.palette.error,
   },
 }));
 
@@ -71,7 +71,7 @@ const AdminEditSubject = () => {
         />
       </Box>
 
-      <Button variant="contained" color="primary" fullWidth onClick={handleSubmit}>
+      <Button sx={{ backgroundColor: "#116E63", color: "white" }} fullWidth onClick={handleSubmit}>
         Save Changes
       </Button>
     </Container>

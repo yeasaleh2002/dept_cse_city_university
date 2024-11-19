@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import ListTable from "../../../Components/ListTable";
 import { studentList } from "../../../Shared";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
 
 const AdminStudentList = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
+  const navigate = useNavigate();
 
   // Define the columns with titles and accessors for each field
   const columns = [
@@ -32,6 +35,15 @@ const AdminStudentList = () => {
 
   return (
     <div>
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-bold">Student List</h1>
+        <Button
+          onClick={() => navigate("/admin/add-student")}
+          sx={{ backgroundColor: "#116E63", color: "white" }}
+        >
+          Add Student
+        </Button>
+      </div>
       <ListTable
         columns={columns}
         rows={studentList}
@@ -42,7 +54,7 @@ const AdminStudentList = () => {
         enableEdit={true}
         enableDelete={true}
         enableView={true}
-        edit_url={"edit-student"}
+        edit_url={"/admin/edit-student"}
         view_url={"view-student"}
         deleteItem={() => {}}
       />

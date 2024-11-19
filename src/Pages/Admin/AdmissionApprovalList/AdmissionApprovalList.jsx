@@ -23,6 +23,7 @@ const AdmissionApprovalList = () => {
 
   return (
     <div>
+      <h1 className="text-2xl font-bold mb-4">Admission Approval List</h1>
       <ListTable
         columns={columns}
         rows={admissionList}
@@ -30,8 +31,8 @@ const AdmissionApprovalList = () => {
         page={page}
         setRowsPerPage={setRowsPerPage}
         setPage={setPage}
-        enableEdit={true}
-        enableDelete={true}
+        enableEdit={false}
+        enableDelete={false}
         enableView={true}
         edit_url={"edit-admission"}
         view_url={"view-admission"}
