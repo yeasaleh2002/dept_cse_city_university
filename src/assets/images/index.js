@@ -27,3 +27,11 @@ export { default as about01 } from "./about01.jpg";
 export { default as about02 } from "./about02.jpg";
 export { default as about03 } from "./about03.jpg";
 export { default as about_bg } from "./about_bg.jpg";
+
+export { default as course01 } from "./course01.jpg";
+export { default as course02 } from "./course02.jpg";
+export { default as course03 } from "./course03.jpg";
+export { default as course04 } from "./course04.jpg";
+export { default as course05 } from "./course05.jpg";
+export { default as course06 } from "./course06.jpg";
+

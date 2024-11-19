@@ -17,5 +17,7 @@ export const Activites = withSuspense(lazy(() => import("./Activities")));
 export const AboutSection = withSuspense(lazy(() => import("./LandingPage/AboutSection")));
 export const AboutUs = withSuspense(lazy(() => import("./AboutUs")));
 export const AboutInfos = withSuspense(lazy(() => import("./AboutInfos")));
+export const CheckCourses = withSuspense(lazy(() => import("./LandingPage/CheckCourses")));
+export const CourseCard = withSuspense(lazy(() => import("./CourseCard")));
 
 

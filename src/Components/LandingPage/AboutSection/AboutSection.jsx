@@ -16,7 +16,7 @@ const AboutSection = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          my: 10,
+          mt: 10,
           "::backdrop": {
             backgroundColor: "rgba(0, 0, 0, 0.5)",
           },

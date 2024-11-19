@@ -10,7 +10,12 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 ReactDOM.render(
   <React.StrictMode>
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <RouterProvider router={router} />
+      <RouterProvider
+        future={{
+          v7_startTransition: true,
+        }}
+        router={router}
+      />
     </LocalizationProvider>
   </React.StrictMode>,
   document.getElementById('root')
