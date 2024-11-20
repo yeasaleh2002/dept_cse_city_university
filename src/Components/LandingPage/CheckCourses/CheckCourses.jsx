@@ -95,7 +95,7 @@ const coursesData = [
 const CheckCourses = () => {
   return (
     <Box sx={{ mb: 10 }}>
-      <Box maxWidth="lg" marginX="auto" sx={{ textAlign: "center", pb: 10 }}>
+      <Box maxWidth="sm" marginX="auto" sx={{ textAlign: "center", pb: 5 }}>
         <Typography
           sx={{
             color: "#FDA31B",

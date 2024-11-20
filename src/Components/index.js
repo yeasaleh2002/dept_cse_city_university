@@ -23,6 +23,8 @@ export const LatestVideoSection = withSuspense(lazy(() => import("./LandingPage/
 export const MeetTeacherSection = withSuspense(lazy(() => import("./LandingPage/MeetTeacherSection")));
 export const TeacherCard = withSuspense(lazy(() => import("./TeacherCard")));
 export const OurGoalSection = withSuspense(lazy(() => import("./LandingPage/OurGoalSection")));
+export const PhotoGallerySection = withSuspense(lazy(() => import("./PhotoGallerySection")));
+
 
 
 

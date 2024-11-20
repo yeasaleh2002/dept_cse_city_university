@@ -38,7 +38,7 @@ const MeetTeacherSection = () => {
 
   return (
     <Box maxWidth="lg" marginX="auto" paddingBottom={10}>
-      <Box sx={{ textAlign: "center", pb: 5 }}>
+      <Box maxWidth="sm" mx="auto" sx={{ textAlign: "center", pb: 5 }}>
         <Typography
           sx={{
             color: "#FDA31B",
@@ -52,7 +52,7 @@ const MeetTeacherSection = () => {
         >
           <SchoolIcon sx={{ color: "#FDA31B" }} /> Our Teachers
         </Typography>
-        <Typography variant="h3" sx={{ fontWeight: "bold", my: 1.5 }}>
+        <Typography variant="h3" sx={{ fontWeight: "bold", my: 2 }}>
           Meet With Our <span style={{ color: "#FDA31B" }}>Teachers</span>
         </Typography>
         <Typography
@@ -65,8 +65,8 @@ const MeetTeacherSection = () => {
       </Box>
       <Grid2 container spacing={3}>
         {teachers.map((teacher) => (
-          <Grid2 size={{ xs: 12, md: 6, lg: 3 }}>
-            <TeacherCard key={teacher.id} {...teacher} />
+          <Grid2 key={teacher.id} size={{ xs: 12, md: 6, lg: 3 }}>
+            <TeacherCard {...teacher} />
           </Grid2>
         ))}
       </Grid2>

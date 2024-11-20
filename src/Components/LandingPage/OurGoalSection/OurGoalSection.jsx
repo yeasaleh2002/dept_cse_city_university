@@ -89,9 +89,34 @@ const OurGoalSection = () => {
             <Grid2 container pt={5} spacing={3}>
               {categories.map(({ id, title, description, icon }) => (
                 <Grid2 key={id} size={{ xs: 12, md: 6 }}>
-                  <Box sx={{ backgroundColor: "#fff", py: 2, pr: 2, borderRadius: 10, borderBottomLeftRadius: 0, display: "flex", alignItems: "center", gap: 2, overflow: "hidden" }}>
-                    <Box sx={{ display: "flex", alignItems: "center", gap: 2, backgroundColor: "#FDA31B", p: 2, borderRadius: "50px 50px 50px 0", ml: -0.5 }}>
-                      <Avatar src={icon} sx={{ width: 40, height: 40, borderRadius: 0 }} />
+                  <Box
+                    sx={{
+                      backgroundColor: "#fff",
+                      py: 2,
+                      pr: 2,
+                      borderRadius: 10,
+                      borderBottomLeftRadius: 0,
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 2,
+                      overflow: "hidden",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 2,
+                        backgroundColor: "#FDA31B",
+                        p: 2,
+                        borderRadius: "50px 50px 50px 0",
+                        ml: -0.5,
+                      }}
+                    >
+                      <Avatar
+                        src={icon}
+                        sx={{ width: 40, height: 40, borderRadius: 0 }}
+                      />
                     </Box>
                     <Box>
                       <Typography

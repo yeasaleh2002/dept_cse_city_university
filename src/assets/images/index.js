@@ -43,3 +43,10 @@ export { default as teacher4 } from "./teacher04.jpg";
 export { default as goal_img } from "./goal01.jpg";
 export { default as goal_bg } from "./goal_bg-shape01.png";
 
+export { default as gallery1 } from "./gallery01.jpg";
+export { default as gallery2 } from "./gallery02.jpg";
+export { default as gallery3 } from "./gallery03.jpg";
+export { default as gallery4 } from "./gallery04.jpg";
+export { default as gallery5 } from "./gallery05.jpg";
+export { default as gallery6 } from "./gallery06.jpg";
+

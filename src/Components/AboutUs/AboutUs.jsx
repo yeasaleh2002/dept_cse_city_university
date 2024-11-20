@@ -117,7 +117,7 @@ const AboutUs = () => {
           </Box>
         </Grid>
         <Grid size={{ xs: 12, md: 6 }}>
-          <Box>
+          <Box maxWidth="sm" mx="auto">
             <Typography
               sx={{
                 color: "#FDA31B",
@@ -131,7 +131,7 @@ const AboutUs = () => {
             >
               <SchoolIcon sx={{ color: "#FDA31B" }} /> About Us
             </Typography>
-            <Typography variant="h3" sx={{ fontWeight: "bold", my: 3 }}>
+            <Typography variant="h3" sx={{ fontWeight: "bold", my: 2 }}>
               Our Education System{" "}
               <span style={{ color: "#FDA31B" }}>Inspires</span> You More.
             </Typography>
