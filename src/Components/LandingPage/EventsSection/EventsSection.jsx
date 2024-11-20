@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Box, Grid2, Typography, IconButton } from "@mui/material";
+import { Box, Grid2, Typography, IconButton, useMediaQuery, useTheme } from "@mui/material";
 import { EventCard } from "../..";
 import SchoolIcon from "@mui/icons-material/School";
 import { event1, event2, event3 } from "../../../assets/images";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { useMediaQuery, useTheme } from "@mui/material";
 
 const eventsData = [
   {
@@ -64,7 +63,7 @@ const EventsSection = () => {
   const displayCount = isXSmall ? 1 : isSmall ? 2 : 3;
 
   return (
-    <Box sx={{ backgroundColor: "#F5F5F5", mt: -10, py: 10 }}>
+    <Box sx={{ backgroundColor: "#f2f3f5", mt: -10, py: 10 }}>
       <Box sx={{paddingX: {xs: 2, md: 4, lg: 0}, position: "relative"}} maxWidth="lg" mx="auto">
         <Box maxWidth="sm" marginX="auto" sx={{ pb: 5, textAlign: "center" }}>
           <Typography

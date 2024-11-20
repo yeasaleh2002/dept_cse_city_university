@@ -10,7 +10,7 @@ const EventCard = ({ title, date, time, location, description, imageUrl }) => {
     <Box
       sx={{
         width: "auto",
-        boxShadow: 5,
+        boxShadow: 4,
         borderRadius: 10,
         borderBottomLeftRadius: 0,
       }}

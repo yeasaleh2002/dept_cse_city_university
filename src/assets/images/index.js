@@ -54,4 +54,12 @@ export { default as offer_bg } from "./offer_bg.jpg";
 
 export { default as event1 } from "./event01.jpg";
 export { default as event2 } from "./event02.jpg";
-export { default as event3 } from "./event03.jpg";  
+export { default as event3 } from "./event03.jpg"; 
+
+export { default as reviewBg } from "./review_bg.jpg";
+export { default as review1 } from "./review01.jpg";
+export { default as review2 } from "./review02.jpg";
+export { default as review3 } from "./review03.jpg";
+export { default as review4 } from "./review04.jpg";
+export { default as review5 } from "./review05.jpg";
+
