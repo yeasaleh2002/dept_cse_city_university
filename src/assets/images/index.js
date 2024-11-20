@@ -35,3 +35,9 @@ export { default as course04 } from "./course04.jpg";
 export { default as course05 } from "./course05.jpg";
 export { default as course06 } from "./course06.jpg";
 
+export { default as teacher1 } from "./teacher01.jpg";
+export { default as teacher2 } from "./teacher02.jpg";
+export { default as teacher3 } from "./teacher03.jpg";
+export { default as teacher4 } from "./teacher04.jpg";
+
+export { default as goal_img } from "./goal01.jpg";

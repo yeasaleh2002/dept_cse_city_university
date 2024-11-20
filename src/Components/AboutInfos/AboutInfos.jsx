@@ -1,28 +1,28 @@
-import React from 'react';
-import { Box, Grid2, Typography } from '@mui/material';
-import { course, award, graduation, teacher_2 } from '../../assets/icons';
+import React from "react";
+import { Box, Grid2, Typography } from "@mui/material";
+import { course, award, graduation, teacher_2 } from "../../assets/icons";
 
 const data = [
   {
     icon: course,
-    number: '500',
-    text: 'Total Courses'
+    number: "500",
+    text: "Total Courses",
   },
   {
     icon: graduation,
-    number: '1900',
-    text: 'Our Students'
+    number: "1900",
+    text: "Our Students",
   },
   {
     icon: teacher_2,
-    number: '750',
-    text: 'Skilled Lecturers'
+    number: "750",
+    text: "Skilled Lecturers",
   },
   {
     icon: award,
-    number: '30',
-    text: 'Win Awards'
-  }
+    number: "30",
+    text: "Win Awards",
+  },
 ];
 
 const AboutInfos = () => {
@@ -30,10 +30,7 @@ const AboutInfos = () => {
     <Box maxWidth="lg" marginX="auto" sx={{ py: 10 }}>
       <Grid2 container spacing={2}>
         {data.map((item, index) => (
-          <Grid2
-            size={{ xs: 6, md: 3 }}
-            key={item.text}
-          >
+          <Grid2 size={{ xs: 6, md: 3 }} key={item.text}>
             <Box
               sx={{
                 width: 100,
@@ -54,8 +51,11 @@ const AboutInfos = () => {
               <img height={60} width={60} src={item.icon} alt={item.text} />
             </Box>
 
-            <Box sx={{ p: 2, textAlign: 'center' }}>
-              <Typography sx={{ color: "#ffffff", fontWeight: "bold", my: 2 }} variant="h4">
+            <Box sx={{ p: 2, textAlign: "center" }}>
+              <Typography
+                sx={{ color: "#ffffff", fontWeight: "bold", my: 2 }}
+                variant="h4"
+              >
                 {item.number}
               </Typography>
               <Typography sx={{ color: "#ffffff", fontWeight: "600" }}>

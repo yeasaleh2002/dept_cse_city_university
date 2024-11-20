@@ -1,11 +1,11 @@
-import { Box, Button, Divider, Typography } from '@mui/material';
-import React from 'react';
-import SchoolIcon from '@mui/icons-material/School';
-import Grid from '@mui/material/Grid2';
-import { about01, about02, about03 } from '../../assets/images';
-import { exchange_idea, global_education, open_book } from '../../assets/icons';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import { Box, Button, Divider, Typography } from "@mui/material";
+import React from "react";
+import SchoolIcon from "@mui/icons-material/School";
+import Grid from "@mui/material/Grid2";
+import { about01, about02, about03 } from "../../assets/images";
+import { exchange_idea, global_education, open_book } from "../../assets/icons";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 
 const AboutUs = () => {
   return (
@@ -17,7 +17,7 @@ const AboutUs = () => {
               display: "flex",
               justifyContent: "space-evenly",
               alignItems: "flex-start",
-              gap: 3
+              gap: 3,
             }}
           >
             <Box
@@ -25,14 +25,20 @@ const AboutUs = () => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                gap: 3
+                gap: 3,
               }}
             >
               <Box>
                 <img
                   src={about01}
                   alt="Student studying"
-                  style={{ borderRadius: 40, borderBottomLeftRadius: 0, width: '100%', height: "auto", objectFit: 'cover' }}
+                  style={{
+                    borderRadius: 40,
+                    borderBottomLeftRadius: 0,
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                  }}
                 />
               </Box>
               <Box
@@ -49,11 +55,11 @@ const AboutUs = () => {
                   sx={{
                     width: 100,
                     height: 100,
-                    borderRadius: '50%',
-                    backgroundColor: '#FFFFFF',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    borderRadius: "50%",
+                    backgroundColor: "#FFFFFF",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                     marginRight: 2,
                   }}
                 >
@@ -80,11 +86,13 @@ const AboutUs = () => {
                 gap: 3,
               }}
             >
-              <Box sx={{ border: '2px dashed #FDA31B', borderRadius: '50%', p: 1 }}>
+              <Box
+                sx={{ border: "2px dashed #FDA31B", borderRadius: "50%", p: 1 }}
+              >
                 <img
                   src={about02}
                   alt="Group discussion"
-                  style={{ borderRadius: '50%', width: '100%' }}
+                  style={{ borderRadius: "50%", width: "100%" }}
                 />
               </Box>
               <Box
@@ -96,7 +104,13 @@ const AboutUs = () => {
                 <img
                   src={about03}
                   alt="Study collaboration"
-                  style={{ borderRadius: 40, borderBottomLeftRadius: 0, width: '100%', height: "auto", objectFit: 'cover' }}
+                  style={{
+                    borderRadius: 40,
+                    borderBottomLeftRadius: 0,
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                  }}
                 />
               </Box>
             </Box>
@@ -106,23 +120,26 @@ const AboutUs = () => {
           <Box>
             <Typography
               sx={{
-                color: '#FDA31B',
+                color: "#FDA31B",
                 fontWeight: "600",
                 borderBottom: "2px #FDA31B solid",
-                display: 'inline-flex',
+                display: "inline-flex",
                 gap: 1,
                 alignItems: "center",
               }}
               variant="h6"
             >
-              <SchoolIcon sx={{ color: '#FDA31B' }} /> About Us
+              <SchoolIcon sx={{ color: "#FDA31B" }} /> About Us
             </Typography>
-            <Typography variant="h3" sx={{ fontWeight: 'bold', my: 3 }}>
-              Our Education System <span style={{ color: '#FDA31B' }}>Inspires</span> You More.
+            <Typography variant="h3" sx={{ fontWeight: "bold", my: 3 }}>
+              Our Education System{" "}
+              <span style={{ color: "#FDA31B" }}>Inspires</span> You More.
             </Typography>
-            <Typography variant="body1" sx={{ color: '#757f95' }}>
-              There are many variations of passages available but the majority have suffered alteration in some form by
-              injected humour randomised words which don't look even slightly believable. If you are going to use passage.
+            <Typography variant="body1" sx={{ color: "#757f95" }}>
+              There are many variations of passages available but the majority
+              have suffered alteration in some form by injected humour
+              randomised words which don't look even slightly believable. If you
+              are going to use passage.
             </Typography>
           </Box>
           <Box>
@@ -135,13 +152,13 @@ const AboutUs = () => {
                         width: 70,
                         height: 70,
                         borderRadius: "50%",
-                        backgroundColor: '#fda31b',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
+                        backgroundColor: "#fda31b",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                         marginRight: 2,
-                        overflow: 'hidden',
-                        boxShadow: '-4px 5px 0px rgba(0, 0, 0, 0.1)',
+                        overflow: "hidden",
+                        boxShadow: "-4px 5px 0px rgba(0, 0, 0, 0.1)",
                       }}
                     >
                       <img
@@ -153,11 +170,18 @@ const AboutUs = () => {
                   </Grid>
                   <Grid size={{ xs: 6, md: 9 }} sx={{ mt: 3 }}>
                     <Box>
-                      <Typography variant="subtitle1" sx={{ fontWeight: 'bold', }}>
+                      <Typography
+                        variant="subtitle1"
+                        sx={{ fontWeight: "bold" }}
+                      >
                         Education Services
                       </Typography>
-                      <Typography variant="body1" sx={{ color: '#757f95', wordWrap: 'break-word' }}>
-                        It is a long established fact that reader will to using content.
+                      <Typography
+                        variant="body1"
+                        sx={{ color: "#757f95", wordWrap: "break-word" }}
+                      >
+                        It is a long established fact that reader will to using
+                        content.
                       </Typography>
                     </Box>
                   </Grid>
@@ -169,13 +193,13 @@ const AboutUs = () => {
                         width: 70,
                         height: 70,
                         borderRadius: "50%",
-                        backgroundColor: '#fda31b',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
+                        backgroundColor: "#fda31b",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                         marginRight: 2,
-                        overflow: 'hidden',
-                        boxShadow: '-4px 5px 0px rgba(0, 0, 0, 0.1)',
+                        overflow: "hidden",
+                        boxShadow: "-4px 5px 0px rgba(0, 0, 0, 0.1)",
                       }}
                     >
                       <img
@@ -187,11 +211,18 @@ const AboutUs = () => {
                   </Grid>
                   <Grid size={{ xs: 6, md: 9 }} sx={{ mt: 3 }}>
                     <Box>
-                      <Typography variant="subtitle1" sx={{ fontWeight: 'bold', }}>
+                      <Typography
+                        variant="subtitle1"
+                        sx={{ fontWeight: "bold" }}
+                      >
                         International Hubs
                       </Typography>
-                      <Typography variant="body1" sx={{ color: '#757f95', wordWrap: 'break-word' }}>
-                        It is a long established fact that reader will to using content.
+                      <Typography
+                        variant="body1"
+                        sx={{ color: "#757f95", wordWrap: "break-word" }}
+                      >
+                        It is a long established fact that reader will to using
+                        content.
                       </Typography>
                     </Box>
                   </Grid>
@@ -217,31 +248,40 @@ const AboutUs = () => {
                   }}
                 >
                   <Typography variant="body1" sx={{ my: 0 }}>
-                    It is a long-established fact that a reader will be distracted by the content of a page when looking at its reader for the long words layout.
+                    It is a long-established fact that a reader will be
+                    distracted by the content of a page when looking at its
+                    reader for the long words layout.
                   </Typography>
                 </Box>
               </Grid>
             </Grid>
           </Box>
           <Divider sx={{ my: 5 }} />
-          <Box sx={{ display: "flex", justifyContent: "start", gap: 3, alignItems: "center" }}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "start",
+              gap: 3,
+              alignItems: "center",
+            }}
+          >
             <Box>
               <Button
                 variant="contained"
                 sx={{
-                  backgroundColor: '#FDA31B',
-                  color: 'white',
-                  borderRadius: '50px',
+                  backgroundColor: "#FDA31B",
+                  color: "white",
+                  borderRadius: "50px",
                   borderBottomLeftRadius: 0,
-                  padding: '12px 24px',
-                  fontWeight: 'bold',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  '&:hover': {
-                    backgroundColor: '#C68A1B',
+                  padding: "12px 24px",
+                  fontWeight: "bold",
+                  position: "relative",
+                  overflow: "hidden",
+                  "&:hover": {
+                    backgroundColor: "#C68A1B",
                   },
                 }}
-                endIcon={<KeyboardArrowRightIcon sx={{ color: 'white' }} />}
+                endIcon={<KeyboardArrowRightIcon sx={{ color: "white" }} />}
               >
                 Discover More
               </Button>
@@ -251,26 +291,31 @@ const AboutUs = () => {
                 sx={{
                   width: 60,
                   height: 60,
-                  borderRadius: '50%',
-                  backgroundColor: '#116e63',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  borderRadius: "50%",
+                  backgroundColor: "#116e63",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                   marginRight: 2,
                 }}
               >
                 <SupportAgentIcon sx={{ color: "#FFFFFF" }} fontSize="large" />
               </Box>
               <Box>
-                <Typography variant="subtitle2" sx={{ fontWeight: "600", color: "#fda31b" }}>
+                <Typography
+                  variant="subtitle2"
+                  sx={{ fontWeight: "600", color: "#fda31b" }}
+                >
                   Call Now
                 </Typography>
-                <Typography variant="body1" sx={{ fontWeight: "600", color: "#116e63", fontSize: 18 }}>
+                <Typography
+                  variant="body1"
+                  sx={{ fontWeight: "600", color: "#116e63", fontSize: 18 }}
+                >
                   +880 123 654 7898
                 </Typography>
               </Box>
             </Box>
-
           </Box>
         </Grid>
       </Grid>

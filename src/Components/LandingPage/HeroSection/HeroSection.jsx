@@ -1,6 +1,6 @@
-import React from 'react';
-import { Box } from '@mui/material';
-import { Slider, Activites } from '../..';
+import React from "react";
+import { Box } from "@mui/material";
+import { Slider, Activites } from "../..";
 
 const HeroSection = () => {
   return (
