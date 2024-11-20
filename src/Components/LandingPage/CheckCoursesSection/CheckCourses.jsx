@@ -92,7 +92,7 @@ const coursesData = [
   },
 ];
 
-const CheckCourses = () => {
+const CheckCoursesSection = () => {
   return (
     <Box sx={{ mb: 10 }}>
       <Box maxWidth="sm" marginX="auto" sx={{ textAlign: "center", pb: 5 }}>
@@ -131,4 +131,4 @@ const CheckCourses = () => {
   );
 };
 
-export default CheckCourses;
+export default CheckCoursesSection;

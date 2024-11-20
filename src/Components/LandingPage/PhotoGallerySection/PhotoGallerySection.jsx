@@ -7,7 +7,7 @@ import {
   gallery4,
   gallery5,
   gallery6,
-} from "../../assets/images";
+} from "../../../assets/images";
 import SchoolIcon from "@mui/icons-material/School";
 
 const PhotoGallerySection = () => {

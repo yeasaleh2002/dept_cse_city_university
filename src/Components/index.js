@@ -17,15 +17,17 @@ export const Activites = withSuspense(lazy(() => import("./Activities")));
 export const AboutSection = withSuspense(lazy(() => import("./LandingPage/AboutSection")));
 export const AboutUs = withSuspense(lazy(() => import("./AboutUs")));
 export const AboutInfos = withSuspense(lazy(() => import("./AboutInfos")));
-export const CheckCourses = withSuspense(lazy(() => import("./LandingPage/CheckCourses")));
+export const CheckCoursesSection = withSuspense(lazy(() => import("./LandingPage/CheckCoursesSection")));
 export const CourseCard = withSuspense(lazy(() => import("./CourseCard")));
 export const LatestVideoSection = withSuspense(lazy(() => import("./LandingPage/LatestVideoSection")));
 export const MeetTeacherSection = withSuspense(lazy(() => import("./LandingPage/MeetTeacherSection")));
 export const TeacherCard = withSuspense(lazy(() => import("./TeacherCard")));
 export const OurGoalSection = withSuspense(lazy(() => import("./LandingPage/OurGoalSection")));
-export const PhotoGallerySection = withSuspense(lazy(() => import("./PhotoGallerySection")));
+export const PhotoGallerySection = withSuspense(lazy(() => import("./LandingPage/PhotoGallerySection")));
 export const OfferSection = withSuspense(lazy(() => import("./LandingPage/OfferSection")));
-export const Events = withSuspense(lazy(() => import("./LandingPage/Events")));
+export const EventsSection = withSuspense(lazy(() => import("./LandingPage/EventsSection")));
+export const EventCard = withSuspense(lazy(() => import("./EventCard")));
+
 
 
 
