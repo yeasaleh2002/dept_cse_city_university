@@ -46,20 +46,30 @@ const LoginForm = () => {
     return Object.values(tempErrors).every((x) => x === "");
   };
 
+  const apiEndpoint = import.meta.env.VITE_API_ENDPOINT;
+  console.log("apiEndpoint", apiEndpoint);
   const handleSubmit = async (e) => {
-    navigate("/admin/dashboard");
-    return;
+    // navigate("/admin/dashboard");
+    // return;
     e.preventDefault();
     if (validate()) {
       try {
         const response = await fetch(
-          "https://cityuniapi.vercel.app/user/login/",
+          `${
+            pathname == "/admin/login"
+              ? `${apiEndpoint}admin/login/`
+              : `${apiEndpoint}user/login/`
+          }`,
           {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ email: email, password }),
+            body: JSON.stringify(
+              pathname == "/admin/login"
+                ? { username: email, password }
+                : { email: email, password }
+            ),
           }
         );
 
@@ -70,7 +80,7 @@ const LoginForm = () => {
           localStorage.setItem("token", data.token);
           localStorage.setItem("user_id", data.user_id);
           localStorage.setItem("role", data.role);
-          localStorage.setItem("first_name", data.first_name);
+          localStorage.setItem("name", data.first_name);
 
           // Navigate based on role
           if (data.role === "admin") {
@@ -160,7 +170,7 @@ const LoginForm = () => {
                   fontSize: 16,
                 }}
               >
-                Email{" "}
+                {pathname == "/admin/login" ? "Username" : "Email"}
                 <Typography color="error" component="span">
                   *
                 </Typography>
@@ -168,9 +178,13 @@ const LoginForm = () => {
               <TextField
                 variant="outlined"
                 fullWidth
-                type="email"
+                type={pathname == "/admin/login" ? "text" : "email"}
                 required
-                placeholder="Enter your email"
+                placeholder={
+                  pathname == "/admin/login"
+                    ? "Enter your username"
+                    : "Enter your email"
+                }
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 error={Boolean(errors.email)}
