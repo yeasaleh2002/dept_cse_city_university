@@ -24,6 +24,8 @@ export const MeetTeacherSection = withSuspense(lazy(() => import("./LandingPage/
 export const TeacherCard = withSuspense(lazy(() => import("./TeacherCard")));
 export const OurGoalSection = withSuspense(lazy(() => import("./LandingPage/OurGoalSection")));
 export const PhotoGallerySection = withSuspense(lazy(() => import("./PhotoGallerySection")));
+export const OfferSection = withSuspense(lazy(() => import("./LandingPage/OfferSection")));
+export const Events = withSuspense(lazy(() => import("./LandingPage/Events")));
 
 
 

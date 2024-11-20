@@ -7,6 +7,8 @@ import {
   MeetTeacherSection,
   OurGoalSection,
   PhotoGallerySection,
+  OfferSection,
+  Events,
 } from "../../../Components";
 import { Box } from "@mui/material";
 
@@ -20,6 +22,8 @@ const LandingPage = () => (
       <MeetTeacherSection />
       <OurGoalSection />
       <PhotoGallerySection />
+      <OfferSection />
+      <Events />
     </Box>
   </Box>
 );

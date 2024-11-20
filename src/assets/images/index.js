@@ -50,3 +50,4 @@ export { default as gallery4 } from "./gallery04.jpg";
 export { default as gallery5 } from "./gallery05.jpg";
 export { default as gallery6 } from "./gallery06.jpg";
 
+export { default as offer_bg } from "./offer_bg.jpg";
