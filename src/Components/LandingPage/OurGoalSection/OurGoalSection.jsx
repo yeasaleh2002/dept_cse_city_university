@@ -55,7 +55,7 @@ const OurGoalSection = () => {
           alignItems="center"
           container
           spacing={6}
-          sx={{ opacity: 1 }}
+          sx={{px: {xs: 2, md: 4, lg: 0}, py: 10}}
         >
           <Grid2 size={{ xs: 12, md: 6 }}>
             <Box>
@@ -140,7 +140,6 @@ const OurGoalSection = () => {
                 borderRadius: 20,
                 borderTopRightRadius: 0,
                 overflow: "hidden",
-                my: 10,
               }}
             >
               <Avatar

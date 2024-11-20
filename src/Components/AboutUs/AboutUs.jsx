@@ -11,12 +11,13 @@ const AboutUs = () => {
   return (
     <Box sx={{ flexGrow: 1, background: "#FFFFFF" }}>
       <Grid container spacing={10}>
-        <Grid size={{ xs: 12, md: 6 }}>
+        <Grid order={{xs: 2, md: 1}} size={{ xs: 12, md: 6 }}>
           <Box
             sx={{
               display: "flex",
+              flexDirection: {xs: "column", md: "row"},
               justifyContent: "space-evenly",
-              alignItems: "flex-start",
+              alignItems: {xs: "center", md: "flex-start"},
               gap: 3,
             }}
           >
@@ -24,6 +25,7 @@ const AboutUs = () => {
               sx={{
                 display: "flex",
                 flexDirection: "column",
+                order: {xs: 2, md: 1},
                 alignItems: "center",
                 gap: 3,
               }}
@@ -49,6 +51,7 @@ const AboutUs = () => {
                   padding: 2,
                   display: "flex",
                   alignItems: "center",
+                  justifyContent: "space-between",
                 }}
               >
                 <Box
@@ -81,6 +84,7 @@ const AboutUs = () => {
             <Box
               sx={{
                 display: "flex",
+                order: {xs: 1, md: 2},
                 flexDirection: "column",
                 alignItems: "center",
                 gap: 3,
@@ -116,7 +120,7 @@ const AboutUs = () => {
             </Box>
           </Box>
         </Grid>
-        <Grid size={{ xs: 12, md: 6 }}>
+        <Grid order={{xs: 1, md: 2}} size={{ xs: 12, md: 6 }}>
           <Box maxWidth="sm" mx="auto">
             <Typography
               sx={{
@@ -145,8 +149,8 @@ const AboutUs = () => {
           <Box>
             <Grid container spacing={4} alignItems="flex-end">
               <Grid size={{ xs: 12, md: 7 }} sx={{ mt: 3 }}>
-                <Grid container spacing={3}>
-                  <Grid size={{ xs: 6, md: 3 }} sx={{ mt: 3 }}>
+                <Grid alignItems="center" sx={{justifyContent: "center"}} container spacing={3}>
+                  <Grid size={{ xs: 6, md: 3 }} sx={{ mt: 3, }}>
                     <Box
                       sx={{
                         width: 70,
@@ -159,6 +163,7 @@ const AboutUs = () => {
                         marginRight: 2,
                         overflow: "hidden",
                         boxShadow: "-4px 5px 0px rgba(0, 0, 0, 0.1)",
+                        mx: {xs: "auto", md: 0},
                       }}
                     >
                       <img
@@ -200,6 +205,7 @@ const AboutUs = () => {
                         marginRight: 2,
                         overflow: "hidden",
                         boxShadow: "-4px 5px 0px rgba(0, 0, 0, 0.1)",
+                        mx: {xs: "auto", md: 0},
                       }}
                     >
                       <img
@@ -260,7 +266,7 @@ const AboutUs = () => {
           <Box
             sx={{
               display: "flex",
-              justifyContent: "start",
+              justifyContent: {xs: "center", md: "start"},
               gap: 3,
               alignItems: "center",
             }}

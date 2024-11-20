@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Box, Grid2, Typography, Button, IconButton } from "@mui/material";
+import { Box, Grid2, Typography, IconButton } from "@mui/material";
 import { EventCard } from "../..";
 import SchoolIcon from "@mui/icons-material/School";
 import { event1, event2, event3 } from "../../../assets/images";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const eventsData = [
   {
@@ -42,6 +43,9 @@ const eventsData = [
 const EventsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [transition, setTransition] = useState(false);
+  const theme = useTheme();
+  const isXSmall = useMediaQuery(theme.breakpoints.down('sm'));
+  const isSmall = useMediaQuery(theme.breakpoints.between('sm', 'md'));
 
   const handlePrev = () => {
     setTransition(true);
@@ -57,9 +61,11 @@ const EventsSection = () => {
     setTimeout(() => setTransition(false), 300);
   };
 
+  const displayCount = isXSmall ? 1 : isSmall ? 2 : 3;
+
   return (
-    <Box sx={{ backgroundColor: "#F5F5F5", mt: -10 }}>
-      <Box maxWidth="lg" mx="auto" sx={{ py: 10, position: "relative" }}>
+    <Box sx={{ backgroundColor: "#F5F5F5", mt: -10, py: 10 }}>
+      <Box sx={{paddingX: {xs: 2, md: 4, lg: 0}, position: "relative"}} maxWidth="lg" mx="auto">
         <Box maxWidth="sm" marginX="auto" sx={{ pb: 5, textAlign: "center" }}>
           <Typography
             sx={{
@@ -88,20 +94,20 @@ const EventsSection = () => {
           sx={{
             opacity: transition ? 0 : 1,
             transition: "opacity 300ms ease-in-out",
-            position: "relative", // Added to position the icon buttons
+            position: "relative",
           }}
           onMouseEnter={() => {
             document.querySelectorAll(".icon-button").forEach((button) => {
-              button.style.display = "flex"; // Show icon buttons on hover
+              button.style.display = "flex"; 
             });
           }}
           onMouseLeave={() => {
             document.querySelectorAll(".icon-button").forEach((button) => {
-              button.style.display = "none"; // Hide icon buttons when not hovering
+              button.style.display = "none"; 
             });
           }}
         >
-          {Array.from({ length: 3 }).map((_, i) => {
+          {Array.from({ length: displayCount }).map((_, i) => {
             const eventIndex = (currentIndex + i) % eventsData.length;
             return (
               <Grid2 size={{ xs: 12, md: 4 }} key={eventsData[eventIndex].id}>
@@ -130,7 +136,6 @@ const EventsSection = () => {
           >
             <KeyboardArrowLeftIcon sx={{fill: "white"}} size="large" />
           </IconButton>
-
           <IconButton
             className="icon-button"
             onClick={handleNext}

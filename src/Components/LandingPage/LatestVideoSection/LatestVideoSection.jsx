@@ -5,7 +5,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 const LatestVideoSection = () => {
   return (
-    <Box maxWidth="lg" marginX="auto" sx={{ mb: 10 }}>
+    <Box maxWidth="lg" sx={{paddingX: {xs: 2, md: 4, lg: 0},mb: 10 }} marginX="auto">
       <Grid2 container alignItems="center" spacing={5}>
         <Grid2 size={{ xs: 12, md: 4 }}>
           <Box sx={{ gap: 2 }}>

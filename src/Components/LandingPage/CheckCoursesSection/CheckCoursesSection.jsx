@@ -120,7 +120,7 @@ const CheckCoursesSection = () => {
           readable content of a page when looking at its layout.
         </Typography>
       </Box>
-      <Grid2 maxWidth="lg" marginX="auto" container spacing={5}>
+      <Grid2 maxWidth="lg" marginX="auto" sx={{px: {xs: 2, md: 4, lg: 0}}} container spacing={5}>
         {coursesData.map((course) => (
           <Grid2 size={{ xs: 12, md: 6, lg: 4 }} key={course.id}>
             <CourseCard {...course} />

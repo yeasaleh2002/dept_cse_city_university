@@ -13,7 +13,7 @@ const OfferSection = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <Grid2 maxWidth="lg" marginX="auto" container spacing={2}>
+      <Grid2 maxWidth="lg" sx={{paddingX: {xs: 2, md: 4, lg: 0}}} marginX="auto" container spacing={2}>
         <Grid2 size={{ xs: 12, md: 6 }} />
         <Grid2 size={{ xs: 12, md: 6 }}>
           <Box

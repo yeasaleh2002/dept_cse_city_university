@@ -37,7 +37,7 @@ const MeetTeacherSection = () => {
   ];
 
   return (
-    <Box maxWidth="lg" marginX="auto" paddingBottom={10}>
+    <Box maxWidth="lg" marginX="auto" sx={{paddingX: {xs: 2, md: 4, lg: 0}, paddingBottom: 10}}>
       <Box maxWidth="sm" mx="auto" sx={{ textAlign: "center", pb: 5 }}>
         <Typography
           sx={{

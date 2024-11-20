@@ -1,4 +1,4 @@
-import { Box, Card, Typography } from "@mui/material";
+import { Box, Card, Grid2, Typography } from "@mui/material";
 import React from "react";
 import { library, money, scholarship, teacher } from "../../assets/icons";
 
@@ -36,16 +36,14 @@ const items = [
 const Activites = () => (
   <Box
     sx={{
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      gap: 3,
       paddingX: 5,
     }}
   >
-    {items.map((item) => (
-      <Card
-        key={item.id}
+    <Grid2 container alignItems="stretch" spacing={3}>
+      {items.map((item) => (
+        <Grid2 size={{ xs: 12, md: 3 }} key={item.id}>  
+          <Card
+            key={item.id}
         sx={{
           padding: 3,
           borderRadius: 10,
@@ -104,8 +102,10 @@ const Activites = () => (
             {item.description}
           </Typography>
         </Box>
-      </Card>
-    ))}
+          </Card>
+        </Grid2>
+      ))}
+    </Grid2>
   </Box>
 );
 

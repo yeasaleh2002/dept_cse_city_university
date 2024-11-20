@@ -1,3 +1,3 @@
-import CheckCoursesSection from "./CheckCourses";
+import CheckCoursesSection from "./CheckCoursesSection";
 
 export default CheckCoursesSection;

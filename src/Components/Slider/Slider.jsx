@@ -76,14 +76,16 @@ const Slider = () => {
         maxWidth="lg"
         marginX="auto"
         sx={{
+          
           display: "flex",
           alignItems: "center",
           height: "100%",
-          padding: "0 40px",
+          paddingX: {xs: 2, md: 4, lg: 0},
+          paddingY: {xs: 0, md: 5},
           gap: 2,
           paddingLeft: 0,
           paddingRight: 0,
-          transform: "translateY(50%)",
+          transform: {xs: "translateY(20%)", md: "translateY(40%)"},
         }}
       >
         <Box

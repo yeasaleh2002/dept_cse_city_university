@@ -12,7 +12,7 @@ import SchoolIcon from "@mui/icons-material/School";
 
 const PhotoGallerySection = () => {
   return (
-    <Box maxWidth="lg" mx="auto" sx={{ mb: 10 }}>
+    <Box maxWidth="lg" sx={{paddingX: {xs: 2, md: 4, lg: 0}, mb: 10}} marginX="auto">
       <Box maxWidth="sm" marginX="auto" sx={{ pb: 5, textAlign: "center" }}>
         <Typography
           sx={{
