@@ -41,3 +41,5 @@ export { default as teacher3 } from "./teacher03.jpg";
 export { default as teacher4 } from "./teacher04.jpg";
 
 export { default as goal_img } from "./goal01.jpg";
+export { default as goal_bg } from "./goal_bg-shape01.png";
+
