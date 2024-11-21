@@ -63,3 +63,7 @@ export { default as review3 } from "./review03.jpg";
 export { default as review4 } from "./review04.jpg";
 export { default as review5 } from "./review05.jpg";
 
+export { default as news1 } from "./news01.jpg";
+export { default as news2 } from "./news02.jpg";
+export { default as news3 } from "./news03.jpg";
+

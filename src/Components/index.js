@@ -29,6 +29,10 @@ export const EventsSection = withSuspense(lazy(() => import("./LandingPage/Event
 export const EventCard = withSuspense(lazy(() => import("./EventCard")));
 export const ReviewSection = withSuspense(lazy(() => import("./LandingPage/ReviewSection")));
 export const ReviewCard = withSuspense(lazy(() => import("./ReviewCard")));
+export const NewsSection = withSuspense(lazy(() => import("./LandingPage/NewsSection")));
+export const NewsCard = withSuspense(lazy(() => import("./NewsCard")));
+
+
 
 
 

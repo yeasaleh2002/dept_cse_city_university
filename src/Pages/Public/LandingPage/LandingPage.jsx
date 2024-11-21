@@ -10,6 +10,7 @@ import {
   OfferSection,
   EventsSection,
   ReviewSection,
+  NewsSection,
 } from "../../../Components";
 import { Box } from "@mui/material";
 
@@ -26,6 +27,7 @@ const LandingPage = () => (
       <OfferSection />
       <EventsSection />
       <ReviewSection />
+      <NewsSection />
     </Box>
   </Box>
 );
