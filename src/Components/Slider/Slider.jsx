@@ -102,7 +102,7 @@ const Slider = () => {
 
             <Typography variant="h3" fontWeight="bold" mb={2}>
               {slides[currentSlide].heading.split(" ").map((part, index) => (
-                <span key={index}>
+                <span key={part}>
                   {part.includes("$") ? (
                     <span style={{ color: "#FDA31B" }}>{part.replace("$", "")}</span>
                   ) : (
