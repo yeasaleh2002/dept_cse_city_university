@@ -1,14 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, Typography, Grid2, useMediaQuery, useTheme } from "@mui/material";
-import { reviewBg } from "../../../assets/images";
+import { reviewBg, review1, review2, review3, review4, review5  } from "../../../assets/images";
 import SchoolIcon from "@mui/icons-material/School";
-import {
-  review1,
-  review2,
-  review3,
-  review4,
-  review5,
-} from "../../../assets/images";
 import { ReviewCard } from "../..";
 
 const reviewData = [
