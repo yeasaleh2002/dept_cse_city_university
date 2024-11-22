@@ -1,18 +1,25 @@
-import { Avatar, Chip } from "@mui/material";
+import { Avatar, Box, Chip, Divider, Stack, Typography, Button } from "@mui/material";
 import React from "react";
-import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import QuestionAnswerRoundedIcon from "@mui/icons-material/QuestionAnswerRounded";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-const NewsCard = ({date, author, commentsCount, title, image}) => {
+const NewsCard = ({ date, author, commentsCount, title, image }) => {
+  console.log({ date, author, commentsCount, title, image });
+  if (typeof image !== "string") {
+    console.error("Image source must be a string URL", image);
+  }
   return (
     <Box
       sx={{
         width: "auto",
-        boxShadow: 5,
+        boxShadow: 4,
         borderRadius: 10,
         borderBottomLeftRadius: 0,
       }}
     >
-       <Box
+      <Box
         sx={{
           width: "100%",
           height: "auto",
@@ -47,57 +54,7 @@ const NewsCard = ({date, author, commentsCount, title, image}) => {
           }}
         />
       </Box>
-      
-    </Box>
-  );
-};
-
-export default NewsCard;
-
-/* <Box
-      sx={{
-        width: "auto",
-        boxShadow: 5,
-        borderRadius: 10,
-        borderBottomLeftRadius: 0,
-      }}
-    >
-      <Box
-        sx={{
-          width: "100%",
-          height: "auto",
-          borderRadius: "10px",
-          overflow: "hidden",
-          padding: 2,
-          position: "relative",
-          paddingBottom: 1,
-        }}
-      >
-        <Avatar
-          src={image}
-          alt="Course"
-          sx={{
-            borderRadius: 10,
-            borderBottomLeftRadius: 0,
-            width: "100%",
-            height: "auto",
-          }}
-        />
-        <Chip
-          icon={<BookmarkBorderOutlinedIcon sx={{ fill: "#FFFFFF" }} />}
-          label={category}
-          sx={{
-            mb: 1,
-            fontWeight: "bold",
-            position: "absolute",
-            top: 40,
-            right: 3,
-            bgcolor: "#fda31b",
-            color: "#fff",
-          }}
-        />
-      </Box>
-      <Box sx={{ px: 3, py: 2, pt: 0 }}>
+      <Box sx={{ px: 3, py: 1, pt: 0 }}>
         <Box
           sx={{
             display: "flex",
@@ -106,105 +63,64 @@ export default NewsCard;
           }}
         >
           <Stack direction="row" alignItems="center" spacing={1} sx={{ my: 1 }}>
-            <SchoolIcon color="action" />
+            <AccountCircleOutlinedIcon
+              fontSize="small"
+              sx={{ fill: "#fda31b" }}
+            />
             <Typography
-              variant="subtitle1"
-              color="#757f95"
+              variant="subtitle2"
+              color="black"
               sx={{ fontWeight: "600" }}
             >
-              {lessons} Lessons
+              {author}
             </Typography>
           </Stack>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Rating name="read-only" value={rating} readOnly />
+          <Stack direction="row" alignItems="center" spacing={1} sx={{ my: 1 }}>
+            <QuestionAnswerRoundedIcon
+              fontSize="small"
+              sx={{ fill: "#fda31b" }}
+            />
             <Typography
-              variant="subtitle1"
-              color="#757f95"
-              sx={{ fontWeight: "600", mt: 0.3 }}
+              variant="subtitle2"
+              color="black"
+              sx={{ fontWeight: "600" }}
             >
-              ({rating})
+              {commentsCount}
             </Typography>
-          </Box>
+          </Stack>
         </Box>
+        <Divider sx={{ my: 1 }} />
         <Typography
-          variant="h6"
-          component="div"
-          sx={{ fontWeight: "600", color: "#333", mb: 1 }}
+          variant="subtitle1"
+          sx={{ fontWeight: "600", color: "#333", fontSize: "1.2rem" }}
         >
           {title}
         </Typography>
-        <Typography
-          variant="body1"
-          color="#757f95"
-          sx={{ mb: 2, lineHeight: 1.8, fontWeight: 500 }}
-        >
-          {description}
-        </Typography>
-        <Divider />
-        <Box
+        <Button
+          variant="contained"
+          size="medium"
           sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: 10,
-            my: 1,
+            backgroundColor: "#FDA31B",
+            color: "white",
+            borderRadius: "50px",
+            my: 2,
+            borderBottomLeftRadius: 0,
+            padding: "10px 20px",
+            fontWeight: "bold",
+            position: "relative",
+            overflow: "hidden",
+            "&:hover": {
+              backgroundColor: "#C68A1B",
+            },
           }}
+          endIcon={<KeyboardArrowRightIcon sx={{ color: "white" }} />}
         >
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: 2,
-            }}
-          >
-            <Stack
-              direction="row"
-              alignItems="center"
-              spacing={1}
-              sx={{ my: 1 }}
-            >
-              <GroupsOutlinedIcon sx={{ fill: "#fda31b" }} />
-              <Typography
-                variant="subtitle2"
-                color="#757f95"
-                sx={{ fontWeight: "600", mt: 0.5, whiteSpace: "nowrap" }}
-              >
-                {seats} Seats
-              </Typography>
-            </Stack>
-            <Stack
-              direction="row"
-              alignItems="center"
-              spacing={1}
-              sx={{ my: 1 }}
-            >
-              <AccessTimeIcon sx={{ fill: "#fda31b" }} />
-              <Typography
-                variant="subtitle2"
-                color="#757f95"
-                sx={{ fontWeight: "600", mt: 0.5, whiteSpace: "nowrap" }}
-              >
-                {duration}
-              </Typography>
-            </Stack>
-            <Typography
-              variant="body2"
-              sx={{
-                alignSelf: "end",
-                fontWeight: "600",
-                color: "#FFFFFF",
-                bgcolor: "#fda31b",
-                px: 2,
-                py: 1,
-                borderRadius: 10,
-                borderBottomLeftRadius: 0,
-                ml: 5,
-              }}
-            >
-              ${price}
-            </Typography>
-          </Box>
-        </Box>
+          Read More
+        </Button>
       </Box>
-    </Box> */
+    </Box>
+  );
+};
+
+export default NewsCard;
+

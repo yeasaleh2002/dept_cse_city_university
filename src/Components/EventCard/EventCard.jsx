@@ -85,6 +85,7 @@ const EventCard = ({ title, date, time, location, description, imageUrl }) => {
         </Typography>
         <Button
           variant="contained"
+          size="medium"
           sx={{
             backgroundColor: "#FDA31B",
             color: "white",
@@ -100,7 +101,7 @@ const EventCard = ({ title, date, time, location, description, imageUrl }) => {
           }}
           endIcon={<KeyboardArrowRightIcon sx={{ color: "white" }} />}
         >
-          Learn More
+          Join Event
         </Button>
       </Box>
     </Box>

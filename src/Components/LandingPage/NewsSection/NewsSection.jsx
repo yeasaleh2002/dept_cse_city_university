@@ -34,7 +34,7 @@ const blogPosts = [
 const NewsSection = () => {
   return (
     <Box
-      sx={{ paddingX: { xs: 2, md: 4, lg: 0 }, position: "relative" }}
+      sx={{ paddingX: { xs: 2, md: 4, lg: 0 }, position: "relative", mb: 10 }}
       maxWidth="lg"
       mx="auto"
     >
@@ -53,20 +53,21 @@ const NewsSection = () => {
           <SchoolIcon sx={{ color: "#FDA31B" }} /> Our Blog
         </Typography>
         <Typography variant="h3" sx={{ fontWeight: "bold", my: 2 }}>
-          Latest News &<span style={{ color: "#FDA31B" }}>Blog</span>
+          Latest News &<span style={{ color: "#FDA31B" }}> Blog</span>
         </Typography>
         <Typography variant="body1" sx={{ color: "#757f95" }}>
           It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout.
         </Typography>
       </Box>
-      {/* <Grid2 container spacing={3}>
+
+      <Grid2 container spacing={3}>
         {blogPosts.map((post) => (
-          <Grid2 size={{ xs: 12, md: 6, lg: 4 }}  key={post.id}>
+          <Grid2 item size={{ sm: 12, md: 6, lg: 4 }} key={post.id}>
             <NewsCard {...post} />
           </Grid2>
         ))}
-      </Grid2> */}
+      </Grid2>
     </Box>
   );
 };
