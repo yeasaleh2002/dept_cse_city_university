@@ -1,4 +1,12 @@
-import { Avatar, Box, Chip, Divider, Stack, Typography, Button } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Chip,
+  Divider,
+  Stack,
+  Typography,
+  Button,
+} from "@mui/material";
 import React from "react";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
@@ -123,4 +131,3 @@ const NewsCard = ({ date, author, commentsCount, title, image }) => {
 };
 
 export default NewsCard;
-

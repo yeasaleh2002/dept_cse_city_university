@@ -34,7 +34,7 @@ const blogPosts = [
 const NewsSection = () => {
   return (
     <Box
-      sx={{ paddingX: { xs: 2, md: 4, lg: 0 }, position: "relative", mb: 10 }}
+      sx={{ paddingX: { xs: 2, md: 4, lg: 0 }, position: "relative" }}
       maxWidth="lg"
       mx="auto"
     >

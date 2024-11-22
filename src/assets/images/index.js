@@ -67,3 +67,8 @@ export { default as news1 } from "./news01.jpg";
 export { default as news2 } from "./news02.jpg";
 export { default as news3 } from "./news03.jpg";
 
+export { default as badge1 } from "./badge01.png";
+export { default as badge2 } from "./badge02.png";
+export { default as badge3 } from "./badge03.png";
+export { default as badge4 } from "./badge04.png";
+
