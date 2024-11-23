@@ -19,12 +19,10 @@ const Header = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+  const handleDrawerToggle = () => setMobileOpen((prev) => !prev);
 
   const navItems = [
-    { navName: "Home", link: "/home" },
+    // { navName: "Home", link: "/home" },
     { navName: "Courses", link: "/courses" },
     { navName: "Academics", link: "/academics" },
     { navName: "Pages", link: "/pages" },
@@ -33,23 +31,26 @@ const Header = () => {
     { navName: "Contact", link: "/contact" },
   ];
 
+  const renderNavItems = () => 
+    navItems.map((item) => (
+      <Button
+        key={item.navName}
+        color="inherit"
+        component={Link}
+        to={item.link}
+        sx={{ color: "black", fontWeight: "bold", display: "block" }}
+      >
+        {item.navName}
+      </Button>
+    ));
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", py: 2, px: 4 }}>
-      <Typography variant="h4" sx={{ flexGrow: 1 }}>
+      <Typography component={Link} to="/" variant="h4" sx={{ flexGrow: 1 }}>
         <span style={{ color: "#FDA31B" }}>edu</span>ka
       </Typography>
       <Divider />
-      {navItems.map((item) => (
-        <Button
-          key={item.navName}
-          color="inherit"
-          component={Link}
-          to={item.link}
-          sx={{ color: "black", fontWeight: "bold", display: "block" }}
-        >
-          {item.navName}
-        </Button>
-      ))}
+      {renderNavItems()}
       <Button
         variant="contained"
         color="secondary"
@@ -82,7 +83,7 @@ const Header = () => {
             py: 1,
           }}
         >
-          <Typography variant="h4" sx={{ flexGrow: 1 }}>
+          <Typography component={Link} to="/" variant="h4" sx={{ flexGrow: 1 }}>
             <span style={{ color: "#FDA31B" }}>edu</span>ka
           </Typography>
           {isMobile ? (
@@ -100,20 +101,10 @@ const Header = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "end",
-                gap: 2.5,
+                gap: { md: 1.8, lg: 3 },
               }}
             >
-              {navItems.map((item) => (
-                <Button
-                  key={item.navName}
-                  color="inherit"
-                  component={Link}
-                  to={item.link}
-                  sx={{ color: "black", fontWeight: "bold" }}
-                >
-                  {item.navName}
-                </Button>
-              ))}
+              {renderNavItems()}
               <Button
                 variant="contained"
                 color="secondary"
