@@ -1,25 +1,149 @@
-import { AppBar, Toolbar, Typography } from '@mui/material';
-import React from 'react'; 
+import React, { useState } from "react";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  Box,
+  Drawer,
+  useTheme,
+  useMediaQuery,
+  Divider,
+} from "@mui/material";
+import { Link } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Header = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  const navItems = [
+    { navName: "Home", link: "/home" },
+    { navName: "Courses", link: "/courses" },
+    { navName: "Academics", link: "/academics" },
+    { navName: "Pages", link: "/pages" },
+    { navName: "Admissions", link: "/admissions" },
+    { navName: "Blog", link: "/blog" },
+    { navName: "Contact", link: "/contact" },
+  ];
+
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", py: 2, px: 4 }}>
+      <Typography variant="h4" sx={{ flexGrow: 1 }}>
+        <span style={{ color: "#FDA31B" }}>edu</span>ka
+      </Typography>
+      <Divider />
+      {navItems.map((item) => (
+        <Button
+          key={item.navName}
+          color="inherit"
+          component={Link}
+          to={item.link}
+          sx={{ color: "black", fontWeight: "bold", display: "block" }}
+        >
+          {item.navName}
+        </Button>
+      ))}
+      <Button
+        variant="contained"
+        color="secondary"
+        sx={{
+          marginLeft: "auto",
+          backgroundColor: "#FFA726",
+          color: "white",
+        }}
+      >
+        Apply Now
+      </Button>
+    </Box>
+  );
 
   return (
-    <div>
-      {/* <nav className="p-4 bg-gray-800 text-white">
-        <ul className="flex space-x-4">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/landing">Landing</Link></li>
-        </ul>
-      </nav> */}
-      <AppBar position="static" sx={{ backgroundColor: 'blue' }}>
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Simple Blue Header
+    <AppBar
+      position="sticky"
+      sx={{ backgroundColor: "#FFFFFF", color: "black", py: 1 }}
+    >
+      <Box sx={{ width: "100%" }}>
+        <Box
+          maxWidth="lg"
+          marginX="auto"
+          sx={{
+            px: { xs: 2, md: 4, lg: 0 },
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+            py: 1,
+          }}
+        >
+          <Typography variant="h4" sx={{ flexGrow: 1 }}>
+            <span style={{ color: "#FDA31B" }}>edu</span>ka
           </Typography>
-        </Toolbar>
-      </AppBar>
-    </div>
+          {isMobile ? (
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+            >
+              <MenuIcon />
+            </IconButton>
+          ) : (
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "end",
+                gap: 2.5,
+              }}
+            >
+              {navItems.map((item) => (
+                <Button
+                  key={item.navName}
+                  color="inherit"
+                  component={Link}
+                  to={item.link}
+                  sx={{ color: "black", fontWeight: "bold" }}
+                >
+                  {item.navName}
+                </Button>
+              ))}
+              <Button
+                variant="contained"
+                color="secondary"
+                sx={{
+                  marginLeft: "auto",
+                  backgroundColor: "#FFA726",
+                  color: "white",
+                }}
+              >
+                Apply Now
+              </Button>
+            </Box>
+          )}
+        </Box>
+      </Box>
+      <Drawer
+        variant="temporary"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{
+          keepMounted: true,
+        }}
+        sx={{
+          display: { xs: "block", md: "none" },
+          "& .MuiDrawer-paper": { boxSizing: "border-box", width: "85%" },
+        }}
+      >
+        {drawer}
+      </Drawer>
+    </AppBar>
   );
 };
 
