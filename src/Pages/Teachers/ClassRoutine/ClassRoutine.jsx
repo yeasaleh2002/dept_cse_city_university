@@ -1,10 +1,13 @@
 import React from 'react';
+import { Box, Typography } from '@mui/material';
 
 const ClassRoutine = () => {
     return (
-        <div>
-            ClassRoutine
-        </div>
+        <Box sx={{ mt: 2 }}>
+            <Typography variant="h6">Class Routine</Typography>
+            {/* Placeholder for calendar view */}
+            <Typography variant="body1">Calendar view will be implemented here.</Typography>
+        </Box>
     );
 };
 

@@ -90,6 +90,26 @@ export const TeacherNotification = withSuspense(
   lazy(() => import("./Teachers/TeacherNotification/TeacherNotification"))
 );
 
+export const TeacherClassTestList = withSuspense(
+  lazy(() => import("./Teachers/TeacherClassTestList/TeacherClassTestList"))
+);
+
+export const EditClassTest = withSuspense(
+  lazy(() => import("./Teachers/EditClassTest/EditClassTest"))
+);
+
+export const TeacherAddExperience = withSuspense(
+  lazy(() => import("./Teachers/TeacherAddExperience/TeacherAddExperience"))
+);
+
+export const TeacherAddDegree = withSuspense(
+  lazy(() => import("./Teachers/TeacherAddDegree/TeacherAddDegree"))
+);
+
+export const TeacherPublishResultList = withSuspense(
+  lazy(() => import("./Teachers/TeacherPublishResultList/TeacherPublishResultList"))
+);
+
 // Admin pages
 export const AdminAddBatch = withSuspense(
   lazy(() => import("./Admin/AdminAddBatch/AdminAddBatch"))

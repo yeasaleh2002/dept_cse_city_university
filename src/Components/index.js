@@ -40,4 +40,5 @@ export const BadgeSection = withSuspense(lazy(() => import("./LandingPage/BadgeS
 
 
 
+export const TeacherProfile = withSuspense(lazy(() => import("./TeacherProfile")));
 
