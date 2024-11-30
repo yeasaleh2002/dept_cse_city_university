@@ -33,6 +33,7 @@ export const NewsSection = withSuspense(lazy(() => import("./LandingPage/NewsSec
 export const NewsCard = withSuspense(lazy(() => import("./NewsCard")));
 export const BadgeSection = withSuspense(lazy(() => import("./LandingPage/BadgeSection")));
 export const TeacherProfile = withSuspense(lazy(() => import("./TeacherProfile")));
+export const ApplicationForm = withSuspense(lazy(() => import("./ApplicationForm")));
 
 
 
