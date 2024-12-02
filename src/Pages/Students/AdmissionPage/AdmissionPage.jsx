@@ -21,7 +21,7 @@ const AdmissionPage = () => {
     e.preventDefault();
     const form = e.target;
 
-    const applicationData = {
+    const formData = {
       first_name: form.first_name.value,
       last_name: form.last_name.value,
       email: form.email.value,
@@ -29,7 +29,7 @@ const AdmissionPage = () => {
       date_of_birth: form.date_of_birth.value,
       address: form.address.value,
       gender: form.gender.value,
-      photo: form.photo.files[0],
+      // photo: form.photo.files[0],
       father_name: form.father_name.value,
       mother_name: form.mother_name.value,
       batch: form.batch.value,
@@ -50,23 +50,24 @@ const AdmissionPage = () => {
       hsc_board: form.hsc_board.value,
       hsc_group: form.hsc_group.value,
     };
-    console.log("Data", applicationData);
+    console.log("Data", formData);
 
 
     fetch("https://city-uni-dpt-api.vercel.app/student/students/", {
       method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(applicationData),
+      body: formData,
     })
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-            console.log("form has been added successfully");
-            alert("form has been added successfully");
+          console.log("Form has been added successfully");
+          alert("Form has been added successfully");
         }
-    });
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+        alert("Failed to submit the form. Please try again.");
+      });
     
 
   };
@@ -150,7 +151,7 @@ const AdmissionPage = () => {
                     <MenuItem value="Other">Other</MenuItem>
                   </TextField>
                 </Grid>
-                <Grid item xs={12}>
+                {/* <Grid item xs={12}>
                   <Box
                     sx={{
                       display: "flex",
@@ -175,7 +176,7 @@ const AdmissionPage = () => {
                       <input type="file" name="photo" />
                     </Button>
                   </Box>
-                </Grid>
+                </Grid> */}
               </Grid>
 
               <Typography variant="h6" mt={4} mb={2}>
@@ -351,9 +352,8 @@ const AdmissionPage = () => {
               <Button
                 type="submit"
                 variant="contained"
-                color="primary"
                 width="half"
-                sx={{ mt: 3 }}
+                sx={{ mt: 3, bgcolor: "#FFA726", px: 4 }}
               >
                 Submit
               </Button>
