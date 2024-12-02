@@ -7,6 +7,7 @@ import {
   Rating,
   Avatar,
   Divider,
+  Card,
 } from "@mui/material";
 import SchoolIcon from "@mui/icons-material/School";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
@@ -25,7 +26,7 @@ const CourseCard = ({
   seats,
 }) => {
   return (
-    <Box
+    <Card
       sx={{
         width: "auto",
         boxShadow: 5,
@@ -38,10 +39,11 @@ const CourseCard = ({
           width: "100%",
           height: "auto",
           borderRadius: "10px",
-          overflow: "hidden",
+          // overflow: "hidden",
           padding: 2,
           position: "relative",
           paddingBottom: 1,
+          // containerType: "unset",
         }}
       >
         <Avatar
@@ -50,8 +52,8 @@ const CourseCard = ({
           sx={{
             borderRadius: 10,
             borderBottomLeftRadius: 0,
-            width: "100%",
-            height: "auto",
+            width: "auto",
+            height: "100%",
           }}
         />
         <Chip
@@ -178,7 +180,7 @@ const CourseCard = ({
           </Box>
         </Box>
       </Box>
-    </Box>
+    </Card>
   );
 };
 

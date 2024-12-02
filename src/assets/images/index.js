@@ -72,3 +72,5 @@ export { default as badge2 } from "./badge02.png";
 export { default as badge3 } from "./badge03.png";
 export { default as badge4 } from "./badge04.png";
 
+export { default as student_login_bg } from "./student_login_bg.webp";
+

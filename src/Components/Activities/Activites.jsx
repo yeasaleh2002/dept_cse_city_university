@@ -37,6 +37,8 @@ const Activites = () => (
   <Box
     sx={{
       paddingX: 5,
+      maxWidth: "lg",
+      marginLeft: "auto",
     }}
   >
     <Grid2 container alignItems="stretch" spacing={3}>

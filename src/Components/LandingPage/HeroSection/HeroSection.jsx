@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <Box>
       <Slider />
-      <Box maxWidth="xl" marginLeft="auto" marginTop={-12}>
+      <Box sx={{ maxWidth: "2000px", marginTop: -12, marginX: "auto" }}>
         <Activites />
       </Box>
     </Box>

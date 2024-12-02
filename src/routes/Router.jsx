@@ -1,7 +1,9 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import {
+import * as Pages from "../Pages";
+
+const {
   LandingPage,
   ErrorPage,
   NotFoundPage,
@@ -15,7 +17,7 @@ import {
   StudentNotification,
   ViewClassRoutine,
   ViewStudentResult,
-  Login as StudentLogin,
+  Login: StudentLogin,
   TeacherLogin,
   ClassRoutine,
   EditTeacherProfile,
@@ -51,7 +53,7 @@ import {
   TeacherAddExperience,
   TeacherAddDegree,
   TeacherPublishResultList,
-} from "../Pages";
+} = Pages;
 
 export const router = createBrowserRouter([
   {
@@ -65,18 +67,9 @@ export const router = createBrowserRouter([
       // Student Routes
       { path: "/student/login", element: <StudentLogin /> },
       { path: "/student/apply-semester", element: <ApplyForASemister /> },
-      {
-        path: "/student/add-class-test-lab",
-        element: <AddStudentClassTest_Lab />,
-      },
-      {
-        path: "/student/edit-class-test-lab",
-        element: <EditStudentClassTest_Lab />,
-      },
-      {
-        path: "/student/class-test-lab-list",
-        element: <StudentClassTest_Lab_List />,
-      },
+      { path: "/student/add-class-test-lab", element: <AddStudentClassTest_Lab /> },
+      { path: "/student/edit-class-test-lab", element: <EditStudentClassTest_Lab /> },
+      { path: "/student/class-test-lab-list", element: <StudentClassTest_Lab_List /> },
       { path: "/student/dashboard", element: <StudentDashboard /> },
       { path: "/student/edit-profile", element: <StudentEditProfile /> },
       { path: "/student/notifications", element: <StudentNotification /> },
@@ -99,18 +92,12 @@ export const router = createBrowserRouter([
           { path: "edit-class-test/:id", element: <EditClassTest /> },
           { path: "add-experience", element: <TeacherAddExperience /> },
           { path: "add-degree", element: <TeacherAddDegree /> },
-          {
-            path: "publish-result-list",
-            element: <TeacherPublishResultList />,
-          },
+          { path: "publish-result-list", element: <TeacherPublishResultList /> },
         ],
       },
 
       // Admin Routes
-      {
-        path: "/admin/login",
-        element: <AdminLogin />,
-      },
+      { path: "/admin/login", element: <AdminLogin /> },
       {
         path: "/admin",
         element: <AdminDashboard />,
@@ -122,10 +109,7 @@ export const router = createBrowserRouter([
           { path: "add-teacher", element: <AdminAddTeacher /> },
           { path: "add-subject", element: <AdminAddSubject /> },
           { path: "batch-list", element: <AdminBatchList /> },
-          {
-            path: "class-test-lab-list",
-            element: <AdminClass_test_Lab_List />,
-          },
+          { path: "class-test-lab-list", element: <AdminClass_test_Lab_List /> },
           { path: "edit-batch/:id", element: <AdminEditBatch /> },
           { path: "edit-routine/:id", element: <AdminEditRoutine /> },
           { path: "edit-student/:id", element: <AdminEditStudent /> },
@@ -133,26 +117,17 @@ export const router = createBrowserRouter([
           { path: "edit-teacher/:id", element: <AdminEditTeacher /> },
           { path: "result-list", element: <AdminResultList /> },
           { path: "routine-list", element: <AdminRoutineList /> },
-          {
-            path: "semester-approval-list",
-            element: <AdminSemisterApprovalList />,
-          },
+          { path: "semester-approval-list", element: <AdminSemisterApprovalList /> },
           { path: "student-list", element: <AdminStudentList /> },
           { path: "teacher-list", element: <AdminTeacherList /> },
           { path: "subject-list", element: <AdminSubjectList /> },
-          {
-            path: "admission-approval-list",
-            element: <AdmissionApprovalList />,
-          },
+          { path: "admission-approval-list", element: <AdmissionApprovalList /> },
           { path: "edit-student-result/:id", element: <EditStudentResult /> },
           { path: "post-student-result", element: <PostStudentResult /> },
         ],
       },
 
-      {
-        path: "*",
-        element: <NotFoundPage />,
-      },
+      { path: "*", element: <NotFoundPage /> },
     ],
   },
 ]);
