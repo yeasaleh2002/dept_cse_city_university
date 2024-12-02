@@ -20,40 +20,56 @@ const AdmissionPage = () => {
   const handleAdd = (e) => {
     e.preventDefault();
     const form = e.target;
-    const formData = new FormData();
-  
    
-    formData.append("first_name", form.first_name.value);
-    formData.append("last_name", form.last_name.value);
-    formData.append("email", form.email.value);
-    formData.append("phone", form.phone.value);
-    formData.append("date_of_birth", form.date_of_birth.value);
-    formData.append("address", form.address.value);
-    formData.append("gender", form.gender.value);
-    formData.append("photo", form.photo.files[0]);
-    formData.append("father_name", form.father_name.value);
-    formData.append("mother_name", form.mother_name.value);
-    formData.append("batch", form.batch.value);
-    formData.append("student_id", form.student_id.value);
-    formData.append("Batch_name", form.batch_name.value);
-    formData.append("ssc_roll", form.ssc_roll.value);
-    formData.append("ssc_reg", form.ssc_reg.value);
-    formData.append("ssc_passing_year", form.ssc_passing_year.value);
-    formData.append("ssc_result", form.ssc_result.value);
-    formData.append("ssc_school", form.ssc_school.value);
-    formData.append("ssc_board", form.ssc_board.value);
-    formData.append("ssc_group", form.ssc_group.value);
-    formData.append("hsc_roll", form.hsc_roll.value);
-    formData.append("hsc_reg", form.hsc_reg.value);
-    formData.append("hsc_passing_year", form.hsc_passing_year.value);
-    formData.append("hsc_result", form.hsc_result.value);
-    formData.append("hsc_college", form.hsc_college.value);
-    formData.append("hsc_board", form.hsc_board.value);
-    formData.append("hsc_group", form.hsc_group.value);
+    const formData = {
+      first_name: form.first_name.value,
+      last_name: form.last_name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      date_of_birth: form.date_of_birth.value,
+      address: form.address.value,
+      gender: form.gender.value,
+      // photo: form.photo.files[0],
+      father_name: form.father_name.value,
+      mother_name: form.mother_name.value,
+      batch: form.batch.value,
+      student_id: form.student_id.value,
+      Batch_name: form.batch_name.value,
+      ssc_roll: form.ssc_roll.value,
+      ssc_reg: form.ssc_reg.value,
+      ssc_passing_year: form.ssc_passing_year.value,
+      ssc_result: form.ssc_result.value,
+      ssc_school: form.ssc_school.value,
+      ssc_board: form.ssc_board.value,
+      ssc_group: form.ssc_group.value,
+      hsc_roll: form.hsc_roll.value,
+      hsc_reg: form.hsc_reg.value,
+      hsc_passing_year: form.hsc_passing_year.value,
+      hsc_result: form.hsc_result.value,
+      hsc_college: form.hsc_college.value,
+      hsc_board: form.hsc_board.value,
+      hsc_group: form.hsc_group.value,
+    };
+    console.log("Data", formData);
 
-    for (let [key, value] of formData.entries()) {
-      console.log(`${key}: ${value}`);
-    }
+
+    fetch("https://city-uni-dpt-api.vercel.app/student/students/", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          console.log("Form has been added successfully");
+          alert("Form has been added successfully");
+        }
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+        alert("Failed to submit the form. Please try again.");
+      });
+    
+
   };
   
 
@@ -136,7 +152,7 @@ const AdmissionPage = () => {
                     <MenuItem value="Other">Other</MenuItem>
                   </TextField>
                 </Grid>
-                <Grid item xs={12}>
+                {/* <Grid item xs={12}>
                   <Box
                     sx={{
                       display: "flex",
@@ -161,7 +177,7 @@ const AdmissionPage = () => {
                       <input type="file" name="photo" />
                     </Button>
                   </Box>
-                </Grid>
+                </Grid> */}
               </Grid>
 
               <Typography variant="h6" mt={4} mb={2}>
