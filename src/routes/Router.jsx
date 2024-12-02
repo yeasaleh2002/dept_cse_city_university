@@ -63,7 +63,10 @@ export const router = createBrowserRouter([
     children: [
       { path: "/", element: <LandingPage /> },
       { path: "/home", element: <LandingPage /> },
-
+      {
+        path: "/admission",
+        element: <AdmissionPage />
+      },
       // Student Routes
       { path: "/student/login", element: <StudentLogin /> },
       { path: "/student/apply-semester", element: <ApplyForASemister /> },
