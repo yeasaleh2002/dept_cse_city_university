@@ -63,11 +63,9 @@ const AdmissionPage = () => {
           console.log("Form has been added successfully");
           alert("Form has been added successfully");
         }
-      })
-      .catch((error) => {
-        console.error("Error submitting form:", error);
-        alert("Failed to submit the form. Please try again.");
-      });
+    });
+    
+
   };
 
   return (
