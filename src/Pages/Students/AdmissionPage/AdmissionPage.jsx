@@ -20,7 +20,8 @@ const AdmissionPage = () => {
   const handleAdd = (e) => {
     e.preventDefault();
     const form = e.target;
-    const formData = {
+
+    const applicationData = {
       first_name: form.first_name.value,
       last_name: form.last_name.value,
       email: form.email.value,
