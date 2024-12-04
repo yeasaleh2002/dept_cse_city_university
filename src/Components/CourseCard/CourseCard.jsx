@@ -36,14 +36,12 @@ const CourseCard = ({
     >
       <Box
         sx={{
-          width: "100%",
           height: "auto",
           borderRadius: "10px",
-          // overflow: "hidden",
+          overflow: "hidden",
           padding: 2,
           position: "relative",
           paddingBottom: 1,
-          // containerType: "unset",
         }}
       >
         <Avatar

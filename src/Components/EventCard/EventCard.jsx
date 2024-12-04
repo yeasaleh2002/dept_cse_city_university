@@ -28,7 +28,6 @@ const EventCard = ({ title, date, time, location, description, imageUrl }) => {
       </Stack>
       <Box
         sx={{
-          width: "100%",
           height: "auto",
           borderRadius: "10px",
           overflow: "hidden",

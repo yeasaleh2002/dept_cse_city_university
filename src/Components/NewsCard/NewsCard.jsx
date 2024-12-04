@@ -29,7 +29,6 @@ const NewsCard = ({ date, author, commentsCount, title, image }) => {
     >
       <Box
         sx={{
-          width: "100%",
           height: "auto",
           borderRadius: "10px",
           overflow: "hidden",

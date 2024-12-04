@@ -51,6 +51,8 @@ const BadgeSection = () => {
                 }}
               >
                 <img
+                  width="100%"
+                  height="auto"
                   src={badges[badgeIndex].image}
                   alt={`badge-${badges[badgeIndex].id}`}
                 />
