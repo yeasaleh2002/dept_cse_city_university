@@ -29,7 +29,7 @@ const AdmissionPage = () => {
       date_of_birth: form.date_of_birth.value,
       address: form.address.value,
       gender: form.gender.value,
-      // photo: form.photo.files[0],
+      photo: form.photo.files[0],
       father_name: form.father_name.value,
       mother_name: form.mother_name.value,
       batch: form.batch.value,
@@ -53,7 +53,7 @@ const AdmissionPage = () => {
     console.log("Data", formData);
 
 
-    fetch("https://city-uni-dpt-api.vercel.app/student/students/", {
+    fetch("https://city-uni-dpt-api.onrender.com/student/students/", {
       method: "POST",
       body: formData,
     })
@@ -68,8 +68,6 @@ const AdmissionPage = () => {
         console.error("Error submitting form:", error);
         alert("Failed to submit the form. Please try again.");
       });
-    
-
   };
   
 
@@ -152,7 +150,7 @@ const AdmissionPage = () => {
                     <MenuItem value="Other">Other</MenuItem>
                   </TextField>
                 </Grid>
-                {/* <Grid item xs={12}>
+                <Grid item xs={12}>
                   <Box
                     sx={{
                       display: "flex",
@@ -177,7 +175,7 @@ const AdmissionPage = () => {
                       <input type="file" name="photo" />
                     </Button>
                   </Box>
-                </Grid> */}
+                </Grid>
               </Grid>
 
               <Typography variant="h6" mt={4} mb={2}>
