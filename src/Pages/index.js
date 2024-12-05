@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import { lazy } from "react";
 import { withSuspense } from "../Utils/withSuspense";
 
 // Public pages
@@ -73,6 +73,15 @@ export const ViewStudentResult = withSuspense(
 export const StudentProfile = withSuspense(
   lazy(() => import("./Students/StudentProfile"))
 );
+
+export const Announcements = withSuspense(
+  lazy(() => import("./Students/Announcements"))
+);
+
+export const Results = withSuspense(
+  lazy(() => import("./Students/Results"))
+);
+
 
 // Teachers pages
 export const TeacherLogin = withSuspense(
