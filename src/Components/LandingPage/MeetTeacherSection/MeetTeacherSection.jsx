@@ -1,40 +1,56 @@
 import { Box, Grid2, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SchoolIcon from "@mui/icons-material/School";
 import TeacherCard from "../../TeacherCard/TeacherCard";
 import { teacher1, teacher2, teacher3, teacher4 } from "../../../assets/images";
+import { callPublicApi } from "../../../utils/api";
+
+const teachers = [
+  {
+    id: 1,
+    name: "John Doe",
+    subject: "Mathematics",
+    designation: "Professor",
+    image: teacher1,
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    subject: "Science",
+    designation: "Associate Professor",
+    image: teacher2,
+  },
+  {
+    id: 3,
+    name: "Alice Johnson",
+    subject: "English",
+    designation: "Assistant Professor",
+    image: teacher3,
+  },
+  {
+    id: 4,
+    name: "Mark Brown",
+    subject: "History",
+    designation: "Professor",
+    image: teacher4,
+  },
+];
 
 const MeetTeacherSection = () => {
-  const teachers = [
-    {
-      id: 1,
-      name: "John Doe",
-      subject: "Mathematics",
-      designation: "Professor",
-      image: teacher1,
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      subject: "Science",
-      designation: "Associate Professor",
-      image: teacher2,
-    },
-    {
-      id: 3,
-      name: "Alice Johnson",
-      subject: "English",
-      designation: "Assistant Professor",
-      image: teacher3,
-    },
-    {
-      id: 4,
-      name: "Mark Brown",
-      subject: "History",
-      designation: "Professor",
-      image: teacher4,
-    },
-  ];
+  const [teachers, setTeachers] = useState([]);
+
+  useEffect(() => {
+    const { data, status  } = callPublicApi("teacher/teachers/", "GET");
+    if (status === 200) {
+      console.log(data);
+      setTeachers(data);
+    }
+  }, []);
+
+
+
+
+
 
   return (
     <Box maxWidth="lg" marginX="auto" sx={{paddingX: {xs: 2, md: 4, lg: 0}, paddingBottom: 10}}>

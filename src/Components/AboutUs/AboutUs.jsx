@@ -258,7 +258,7 @@ const AboutUs = () => {
               alignItems: "center",
             }}
           >
-            <Box>
+            {/* <Box>
               <Button
                 variant="contained"
                 sx={{
@@ -278,7 +278,7 @@ const AboutUs = () => {
               >
                 Discover More
               </Button>
-            </Box>
+            </Box> */}
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <Box
                 sx={{

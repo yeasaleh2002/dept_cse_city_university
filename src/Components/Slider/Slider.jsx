@@ -4,6 +4,7 @@ import { bg_slide_1, bg_slide_2, bg_slide_3 } from "../../assets/images";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import SchoolIcon from "@mui/icons-material/School";
+import { Link } from "react-router-dom";
 
 const slides = [
   {
@@ -119,6 +120,8 @@ const Slider = () => {
             <Box sx={{ display: "flex", justifyContent: "end", gap: 3 }}>
               <Button
                 variant="contained"
+                component={Link}
+                to="/about-us"
                 sx={{
                   backgroundColor: "#FDA31B",
                   color: "white",
@@ -138,6 +141,8 @@ const Slider = () => {
               </Button>
               <Button
                 variant="outlined"
+                component={Link}
+                to="/contact-us"
                 sx={{
                   backgroundColor: "white",
                   color: "#4A4A4A",
