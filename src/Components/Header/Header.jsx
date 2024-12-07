@@ -68,60 +68,83 @@ const Header = () => {
   const renderUserSection = () => {
     if (user && user.username) {
       return (
-        <Box sx={{ display: "flex", alignItems: "center", gap: 1, pl: 5 }}>
-        <Typography
-          variant="subtitle1"
-          color="inherit"
+        <Box
           sx={{
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            whiteSpace: "nowrap",
+            display: "flex",
+            flexDirection: { xs: "column-reverse", md: "row" },
+            alignItems: "center",
+            gap: 1,
+            pl: { xs: 0, md: 5 },
           }}
         >
-          {user.first_name} {user.last_name}
-        </Typography>
-        <IconButton onClick={handleOpenMenu}>
-          <Avatar
-            src={user.photo}
-            alt="user"
-            sx={{ width: 40, height: 40, borderRadius: 2 }}
-          />
-        </IconButton>
-        <Menu
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={handleCloseMenu}
-          anchorOrigin={{
-            vertical: "bottom",
-            horizontal: "right",
-          }}
-          transformOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-        >
-          <MenuItem
-            onClick={() => {
-              handleCloseMenu();
-              navigate("/student/profile");
+          <Typography
+            variant={isMobile ? "h6" : "subtitle1"}
+            color="inherit"
+            sx={{
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              whiteSpace: "nowrap",
             }}
           >
-            View Profile
-          </MenuItem>
-          <MenuItem
-            onClick={() => {
-              handleCloseMenu();
-              logout();
-              navigate("/student/login");
+            {user.first_name} {user.last_name}
+          </Typography>
+          {!isMobile ? (
+            <IconButton onClick={handleOpenMenu}>
+              <Avatar
+                src={user.photo}
+                alt="user"
+                sx={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 2,
+                }}
+              />
+            </IconButton>
+          ) : (
+            <Avatar
+              src={user.photo}
+              alt="user"
+              sx={{
+                width: 70,
+                height: 70,
+              }}
+            />
+          )}
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleCloseMenu}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "right",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
             }}
           >
-            Logout
-          </MenuItem>
-        </Menu>
-      </Box>
+            <MenuItem
+              onClick={() => {
+                handleCloseMenu();
+                navigate("/student/profile");
+              }}
+            >
+              View Profile
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                handleCloseMenu();
+                logout();
+                navigate("/student/login");
+              }}
+            >
+              Logout
+            </MenuItem>
+          </Menu>
+        </Box>
       );
     } else {
-      return (
+      return !isMobile ? (
         <>
           <Button
             component={Link}
@@ -157,7 +180,7 @@ const Header = () => {
             Admission
           </Button>
         </>
-      );
+      ) : null;
     }
   };
 
@@ -169,7 +192,7 @@ const Header = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        gap: 3,
+        gap: 2,
         px: 4,
         py: 1,
       }}
@@ -198,43 +221,87 @@ const Header = () => {
           <CloseIcon fontSize="small" sx={{ fill: "#FFA726" }} />
         </IconButton>
       </Box>
+      <Box sx={{ width: "100%", mb: -2 }}>{renderUserSection()}</Box>
       <Divider />
       {renderNavItems()}
-      <Button
-        component={Link}
-        to="/student/login"
-        variant="outlined"
-        color="secondary"
-        sx={{
-          border: "1px solid #FFA726",
-          color: "#FFA726",
-          fontWeight: "bold",
-          py: 1.3,
-          px: 5,
-          borderRadius: 10,
-          borderBottomLeftRadius: 0,
-          width: "100%",
-        }}
-      >
-        Login
-      </Button>
-      <Button
-        component={Link}
-        to="/admission"
-        variant="contained"
-        color="secondary"
-        sx={{
-          backgroundColor: "#FFA726",
-          color: "white",
-          py: 1.3,
-          px: 5,
-          borderRadius: 10,
-          borderBottomLeftRadius: 0,
-          width: "100%",
-        }}
-      >
-        Admission
-      </Button>
+      {user && user.username ? (
+        <>
+          <Button
+            component={Link}
+            to="/student/profile"
+            variant="outlined"
+            color="secondary"
+            sx={{
+              border: "1px solid #FFA726",
+              color: "#FFA726",
+              fontWeight: "bold",
+              py: 1.3,
+              px: 5,
+              borderRadius: 10,
+              borderBottomLeftRadius: 0,
+              width: "100%",
+            }}
+          >
+            View Profile
+          </Button>
+          <Button
+            sx={{
+              backgroundColor: "#FF0000",
+              color: "white",
+              py: 1.3,
+              px: 5,
+              borderRadius: 10,
+              borderBottomLeftRadius: 0,
+              width: "100%",
+            }}
+            onClick={() => {
+              logout();
+              navigate("/student/login");
+            }}
+
+          >
+            Logout
+          </Button>
+        </>
+      ) : (
+        <>
+          <Button
+            component={Link}
+            to="/student/login"
+            variant="outlined"
+            color="secondary"
+            sx={{
+              border: "1px solid #FFA726",
+              color: "#FFA726",
+              fontWeight: "bold",
+              py: 1.3,
+              px: 5,
+              borderRadius: 10,
+              borderBottomLeftRadius: 0,
+              width: "100%",
+            }}
+          >
+            Login
+          </Button>
+          <Button
+            component={Link}
+            to="/admission"
+            variant="contained"
+            color="secondary"
+            sx={{
+              backgroundColor: "#FFA726",
+              color: "white",
+              py: 1.3,
+              px: 5,
+              borderRadius: 10,
+              borderBottomLeftRadius: 0,
+              width: "100%",
+            }}
+          >
+            Admission
+          </Button>
+        </>
+      )}
     </Box>
   );
 
