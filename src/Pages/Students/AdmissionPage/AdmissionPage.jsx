@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import { BreadcrumbsComponent } from "../../../Components";
 import { Container } from "@mui/material";
-import {
-  TextField,
-  Button,
-  MenuItem,
-  Box,
-  Typography,
-  Grid,
-} from "@mui/material";
+import { TextField, Button, Box, Typography, Grid } from "@mui/material";
+import { callPublicApi } from "../../../utils/api";
 
 const AdmissionPage = () => {
   const breadcrumbs = [
@@ -16,44 +10,20 @@ const AdmissionPage = () => {
     { title: "Application Form", link: "/application" },
   ];
 
+  const [gender, setGender] = useState("");
 
-  const handleAdd = (e) => {
+  const handleGenderChange = (event) => {
+    setGender(event.target.value);
+  };
+
+  const handleAdd = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const formData = new FormData();
-  
-   
-    formData.append("first_name", form.first_name.value);
-    formData.append("last_name", form.last_name.value);
-    formData.append("email", form.email.value);
-    formData.append("phone", form.phone.value);
-    formData.append("date_of_birth", form.date_of_birth.value);
-    formData.append("address", form.address.value);
-    formData.append("gender", form.gender.value);
-    formData.append("photo", form.photo.files[0]);
-    formData.append("father_name", form.father_name.value);
-    formData.append("mother_name", form.mother_name.value);
-    formData.append("batch", form.batch.value);
-    formData.append("student_id", form.student_id.value);
-    formData.append("Batch_name", form.batch_name.value);
-    formData.append("ssc_roll", form.ssc_roll.value);
-    formData.append("ssc_reg", form.ssc_reg.value);
-    formData.append("ssc_passing_year", form.ssc_passing_year.value);
-    formData.append("ssc_result", form.ssc_result.value);
-    formData.append("ssc_school", form.ssc_school.value);
-    formData.append("ssc_board", form.ssc_board.value);
-    formData.append("ssc_group", form.ssc_group.value);
-    formData.append("hsc_roll", form.hsc_roll.value);
-    formData.append("hsc_reg", form.hsc_reg.value);
-    formData.append("hsc_passing_year", form.hsc_passing_year.value);
-    formData.append("hsc_result", form.hsc_result.value);
-    formData.append("hsc_college", form.hsc_college.value);
-    formData.append("hsc_board", form.hsc_board.value);
-    formData.append("hsc_group", form.hsc_group.value);
 
     const applicationData = {
       first_name: form.first_name.value,
       last_name: form.last_name.value,
+      username: form.username.value,
       email: form.email.value,
       phone: form.phone.value,
       date_of_birth: form.date_of_birth.value,
@@ -62,8 +32,6 @@ const AdmissionPage = () => {
       // photo: form.photo.files[0],
       father_name: form.father_name.value,
       mother_name: form.mother_name.value,
-      batch: form.batch.value,
-      student_id: form.student_id.value,
       Batch_name: form.batch_name.value,
       ssc_roll: form.ssc_roll.value,
       ssc_reg: form.ssc_reg.value,
@@ -80,8 +48,9 @@ const AdmissionPage = () => {
       hsc_board: form.hsc_board.value,
       hsc_group: form.hsc_group.value,
     };
-    console.log("Data", formData);
 
+
+    console.log("form data", applicationData);
 
     fetch("https://city-uni-dpt-api.onrender.com/student/students/", {
       method: "POST",
@@ -100,8 +69,22 @@ const AdmissionPage = () => {
       });
     
 
+      // Send POST request
+      const { data, status } = await callPublicApi(
+        "student/students/",
+        "POST",
+        applicationData
+      );
+
+      if (status === 200) {
+        console.log("Submission Successful:", data);
+        alert("Application submitted successfully!");
+      } else {
+        console.error("Submission Failed:", data);
+        alert("Failed to submit the application. Please try again.");
+      }
+   
   };
-  
 
   return (
     <div>
@@ -145,6 +128,14 @@ const AdmissionPage = () => {
                 <Grid item xs={12} md={6}>
                   <TextField
                     fullWidth
+                    label="User Name"
+                    variant="outlined"
+                    name="username"
+                  />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <TextField
+                    fullWidth
                     label="Email Address"
                     variant="outlined"
                     name="email"
@@ -176,11 +167,9 @@ const AdmissionPage = () => {
                     label="Gender"
                     variant="outlined"
                     name="gender"
-                  >
-                    <MenuItem value="Male">Male</MenuItem>
-                    <MenuItem value="Female">Female</MenuItem>
-                    <MenuItem value="Other">Other</MenuItem>
-                  </TextField>
+                    value={gender}
+                    onChange={handleGenderChange}
+                  ></TextField>
                 </Grid>
                 <Grid item xs={12}>
                   <Box
@@ -236,22 +225,6 @@ const AdmissionPage = () => {
                 Academic Information
               </Typography>
               <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
-                  <TextField
-                    fullWidth
-                    label="Batch"
-                    variant="outlined"
-                    name="batch"
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <TextField
-                    fullWidth
-                    label="Student ID"
-                    variant="outlined"
-                    name="student_id"
-                  />
-                </Grid>
                 <Grid item xs={12} md={6}>
                   <TextField
                     fullWidth
