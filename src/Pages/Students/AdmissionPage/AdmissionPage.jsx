@@ -51,9 +51,54 @@ const AdmissionPage = () => {
     formData.append("hsc_board", form.hsc_board.value);
     formData.append("hsc_group", form.hsc_group.value);
 
-    for (let [key, value] of formData.entries()) {
-      console.log(`${key}: ${value}`);
-    }
+    const applicationData = {
+      first_name: form.first_name.value,
+      last_name: form.last_name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      date_of_birth: form.date_of_birth.value,
+      address: form.address.value,
+      gender: form.gender.value,
+      photo: form.photo.files[0],
+      father_name: form.father_name.value,
+      mother_name: form.mother_name.value,
+      batch: form.batch.value,
+      student_id: form.student_id.value,
+      Batch_name: form.batch_name.value,
+      ssc_roll: form.ssc_roll.value,
+      ssc_reg: form.ssc_reg.value,
+      ssc_passing_year: form.ssc_passing_year.value,
+      ssc_result: form.ssc_result.value,
+      ssc_school: form.ssc_school.value,
+      ssc_board: form.ssc_board.value,
+      ssc_group: form.ssc_group.value,
+      hsc_roll: form.hsc_roll.value,
+      hsc_reg: form.hsc_reg.value,
+      hsc_passing_year: form.hsc_passing_year.value,
+      hsc_result: form.hsc_result.value,
+      hsc_college: form.hsc_college.value,
+      hsc_board: form.hsc_board.value,
+      hsc_group: form.hsc_group.value,
+    };
+    console.log("Data", applicationData);
+
+
+    fetch("https://city-uni-dpt-api.vercel.app/student/students/", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(applicationData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+            console.log("form has been added successfully");
+            alert("form has been added successfully");
+        }
+    });
+    
+
   };
   
 
