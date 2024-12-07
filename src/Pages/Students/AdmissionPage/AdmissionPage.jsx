@@ -71,7 +71,7 @@ const AdmissionPage = () => {
         alert("Failed to submit the application. Please try again.");
       }
     } catch (error) {
-      console.error("Error submitting application:", error);
+      console.error("Error submitting:", error);
       alert("An error occurred while submitting the application.");
     }
   };
