@@ -53,6 +53,7 @@ const {
   TeacherAddExperience,
   TeacherAddDegree,
   TeacherPublishResultList,
+  StudentProfile,
 } = Pages;
 
 export const router = createBrowserRouter([
@@ -78,6 +79,7 @@ export const router = createBrowserRouter([
       { path: "/student/notifications", element: <StudentNotification /> },
       { path: "/student/class-routine", element: <ViewClassRoutine /> },
       { path: "/student/view-results", element: <ViewStudentResult /> },
+      { path: "/student/profile", element: <StudentProfile /> },
 
       // Teacher Routes
       { path: "/teacher/login", element: <TeacherLogin /> },

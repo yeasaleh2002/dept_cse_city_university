@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   AppBar,
   Typography,
@@ -13,16 +13,25 @@ import {
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from '@mui/icons-material/Close';
+import { useAuth } from "../../contexts/AuthContext";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
+  const { user, getUser } = useAuth();
+
+  useEffect(() => {
+    getUser();
+  }, []);
+
   const handleDrawerToggle = (event) => {
     event.stopPropagation();
     setMobileOpen((prev) => !prev);
   };
+
+  console.log(user);
 
   const navItems = [
     // { navName: "Home", link: "/home" },
@@ -57,6 +66,7 @@ const Header = () => {
         alignItems: "center",
         gap: 3,
         px: 4,
+        py: 3,
       }}
     >
       <Box sx={{ ml: "auto", mr: 0, gap: 2 }}>
@@ -85,6 +95,7 @@ const Header = () => {
           px: 5,
           borderRadius: 10,
           borderBottomLeftRadius: 0,
+          width: "100%",
         }}
       >
         Login
@@ -101,6 +112,7 @@ const Header = () => {
           px: 5,
           borderRadius: 10,
           borderBottomLeftRadius: 0,
+          width: "100%",
         }}
       >
         Apply Now
