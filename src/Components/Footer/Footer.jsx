@@ -39,7 +39,9 @@ const Footer = () => {
             <span style={{ color: "#FDA31B" }}>edu</span>ka
           </Typography>
           <Typography variant="body2" sx={{ mb: 2 }}>
-            Welcome to City University, Ashuliya Savar. We are dedicated to providing quality education and fostering a vibrant learning community.
+            Welcome to City University, Ashuliya Savar. We are dedicated to
+            providing quality education and fostering a vibrant learning
+            community.
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
             <Phone sx={{ color: "#FDA31B", mr: 1 }} />
@@ -47,7 +49,9 @@ const Footer = () => {
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
             <LocationOn sx={{ color: "#FDA31B", mr: 1 }} />
-            <Typography variant="body2">City University, Ashuliya Savar</Typography>
+            <Typography variant="body2">
+              City University, Ashuliya Savar
+            </Typography>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <Email sx={{ color: "#FDA31B", mr: 1 }} />
@@ -69,12 +73,12 @@ const Footer = () => {
               // { name: "Update News", path: "/update-news" },
             ].map(({ name, path }) => (
               <ListItem key={name} disableGutters>
-                <Link to={path} style={{ textDecoration: 'none' }}>
+                <Link to={path} style={{ textDecoration: "none" }}>
                   <ListItemText
                     primary={name}
                     sx={{
                       color: "white",
-                      '&:hover': { color: "#FDA31B" },
+                      "&:hover": { color: "#FDA31B" },
                       cursor: "pointer",
                     }}
                   />
@@ -189,6 +193,8 @@ const Footer = () => {
             mt: 4,
             pt: 2,
             borderTop: "1px solid #344869",
+            display: "flex",
+            justifyContent: "space-between",
           }}
         >
           <Typography variant="body2">
@@ -196,6 +202,13 @@ const Footer = () => {
             <span style={{ color: "#FDA31B", fontWeight: "bold" }}>Eduka</span>{" "}
             All Rights Reserved.
           </Typography>
+          <Box>
+            <a href="https://city-uni-dpt-api.onrender.com/admin">
+              <Button style={{ color: "#FDA31B", fontWeight: "bold" }}>
+                Admin
+              </Button>{" "}
+            </a>
+          </Box>
         </Box>
       </Box>
     </Box>
