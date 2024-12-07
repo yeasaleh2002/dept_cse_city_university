@@ -28,10 +28,9 @@ const LatestVideoSection = () => {
               Video
             </Typography>
             <Typography variant="body1" sx={{ color: "#757f95" }}>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout.
+              Our university is excited to introduce a range of new features designed to enhance the student experience. From state-of-the-art learning facilities to innovative online resources, we are committed to providing an environment that fosters academic excellence and personal growth. Explore our new interactive learning platforms, updated course offerings, and enhanced support services that ensure every student has the tools they need to succeed.
             </Typography>
-            <Button
+            {/* <Button
               variant="contained"
               sx={{
                 backgroundColor: "#FDA31B",
@@ -48,7 +47,7 @@ const LatestVideoSection = () => {
               endIcon={<KeyboardArrowRightIcon sx={{ color: "white" }} />}
             >
               Learn More
-            </Button>
+            </Button> */}
           </Box>
         </Grid2>
         <Grid2 size={{ xs: 12, md: 8 }}>

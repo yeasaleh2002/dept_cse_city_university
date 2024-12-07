@@ -10,31 +10,31 @@ const eventsData = [
   {
     id: 1,
     location: "25/B Milford Road, New York",
-    date: "16 June, 2024",
+    date: "20 June, 2024",
     time: "10:00AM - 04:00PM",
-    title: "High School Program 2024",
+    title: "CSE Workshop: Introduction to Machine Learning",
     description:
-      "There are many variations of passages the majority have some injected humour.",
+      "Join us for an interactive workshop on the basics of machine learning, where you'll learn key concepts and techniques.",
     imageUrl: event1,
   },
   {
     id: 2,
     location: "25/B Milford Road, New York",
-    date: "16 June, 2024",
+    date: "25 June, 2024",
     time: "10:00AM - 04:00PM",
-    title: "High School Program 2024",
+    title: "Guest Lecture: Innovations in Cybersecurity",
     description:
-      "There are many variations of passages the majority have some injected humour.",
+      "Attend a guest lecture by industry experts discussing the latest trends and innovations in cybersecurity.",
     imageUrl: event2,
   },
   {
     id: 3,
     location: "25/B Milford Road, New York",
-    date: "16 June, 2024",
+    date: "30 June, 2024",
     time: "10:00AM - 04:00PM",
-    title: "High School Program 2024",
+    title: "Hackathon: Build Your First App",
     description:
-      "There are many variations of passages the majority have some injected humour.",
+      "Participate in a hackathon where you'll collaborate with peers to build your first application from scratch.",
     imageUrl: event3,
   },
 ];
@@ -83,12 +83,12 @@ const EventsSection = () => {
             Our Upcoming <span style={{ color: "#FDA31B" }}>Events</span>
           </Typography>
           <Typography variant="body1" sx={{ color: "#757f95" }}>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
+            Join us for our upcoming Computer Science Faculty events, including workshops, guest lectures, and hackathons designed to enhance your skills and knowledge in the tech industry.
           </Typography>
         </Box>
         <Grid2
           container
+          justifyContent="stretch"
           spacing={3}
           sx={{
             opacity: transition ? 0 : 1,

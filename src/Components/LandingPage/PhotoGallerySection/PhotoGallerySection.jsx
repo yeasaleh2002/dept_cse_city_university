@@ -31,8 +31,7 @@ const PhotoGallerySection = () => {
           Our Photo <span style={{ color: "#FDA31B" }}>Gallery</span>
         </Typography>
         <Typography variant="body1" sx={{ color: "#757f95" }}>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout.
+          Our Computer Science Department's photo gallery showcases the vibrant community and engaging activities that foster learning and innovation. Explore moments from workshops, guest lectures, and collaborative projects that highlight our commitment to excellence in education.
         </Typography>
       </Box>
       <Grid2 container spacing={3}>

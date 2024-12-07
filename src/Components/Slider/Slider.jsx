@@ -9,23 +9,23 @@ const slides = [
   {
     id: 1,
     image: bg_slide_1,
-    subheading: "Welcome to City University !",
-    heading: "The University of $Culture and Excellence",
-    description: "Explore a diverse range of programs designed to foster creativity and innovation.",
+    subheading: "Welcome to Tech Innovators!",
+    heading: "Leading the Future of Computer Science",
+    description: "Join us to master cutting-edge technologies and drive innovation.",
   },
   {
     id: 2,
     image: bg_slide_2,
-    subheading: "Join Our Community !",
-    heading: "A Place for $Growth and Learning",
-    description: "Become part of a vibrant community that encourages collaboration and personal development.",
+    subheading: "Become a Tech Leader!",
+    heading: "Empowering Future Innovators",
+    description: "Collaborate with industry experts and enhance your skills in a dynamic environment.",
   },
   {
     id: 3,
     image: bg_slide_3,
-    subheading: "Your Future Starts Here !",
-    heading: "Empowering Students for $Success",
-    description: "We provide the tools and resources you need to achieve your academic and career goals.",
+    subheading: "Shape Your Career!",
+    heading: "Unlock Your Potential in Tech",
+    description: "Gain hands-on experience and access to top-tier resources to achieve your career aspirations.",
   },
 ];
 

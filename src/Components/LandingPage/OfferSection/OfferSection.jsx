@@ -50,15 +50,13 @@ const OfferSection = () => {
               }}
             />
             <Typography variant="h3" sx={{ fontWeight: "bold" }}>
-              Our 20% Offer Running - Join Today For Your Course
+              Our 20% Offer Running - Join Today For Your University
             </Typography>
             <Typography
               variant="body1"
               sx={{ fontSize: "18px", lineHeight: 1.8, py: 3 }}
             >
-              There are many variations of passages available but the majority
-              have suffered alteration in some form by injected humour
-              randomised words which don't look even slightly believable.
+              Unlock your potential in Computer Science with our dynamic admission program, where innovation meets opportunity, and your future begins today.
             </Typography>
             <Button
               variant="contained"

@@ -14,25 +14,25 @@ const OurGoalSection = () => {
     {
       id: 1,
       title: "Expert Teachers",
-      description: "There are many variations of the suffered.",
+      description: "Learn from experts with 10+ years of skill.",
       icon: teacher_2,
     },
     {
       id: 2,
       title: "Courses Material",
-      description: "There are many variations of the suffered.",
+      description: "Access resources from top global schools.",
       icon: courses_material,
     },
     {
       id: 3,
       title: "Online Courses",
-      description: "There are many variations of the suffered.",
+      description: "Flexible courses with 95% satisfaction rate.",
       icon: online_courses,
     },
     {
       id: 4,
       title: "Affordable Price",
-      description: "There are many variations of the suffered.",
+      description: "Quality education starts at just $199 now.",
       icon: money_2,
     },
   ];
@@ -81,9 +81,7 @@ const OurGoalSection = () => {
                 Goal
               </Typography>
               <Typography variant="body1" sx={{ color: "#fff" }}>
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when many desktop and web page
-                editors looking at its layout.
+                Our Computer Science Department aims to provide a comprehensive education that equips students with the skills and knowledge necessary to excel in the tech industry. We focus on fostering innovation, critical thinking, and practical experience through hands-on projects and collaborative learning. Our goal is to prepare students to meet the challenges of a rapidly evolving digital landscape and to become leaders in their fields.
               </Typography>
             </Box>
             <Grid2 container pt={5} spacing={3}>
