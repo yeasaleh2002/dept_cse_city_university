@@ -14,7 +14,6 @@ import QuestionAnswerRoundedIcon from "@mui/icons-material/QuestionAnswerRounded
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 const NewsCard = ({ date, author, commentsCount, title, image }) => {
-  console.log({ date, author, commentsCount, title, image });
   if (typeof image !== "string") {
     console.error("Image source must be a string URL", image);
   }
