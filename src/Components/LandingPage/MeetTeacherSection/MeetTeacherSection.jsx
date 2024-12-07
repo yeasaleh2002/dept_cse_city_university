@@ -59,8 +59,7 @@ const MeetTeacherSection = () => {
           variant="body1"
           sx={{ color: "#757f95", textAlign: "center" }}
         >
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout.
+          Our Science faculty is dedicated to fostering a deep understanding of scientific principles and encouraging critical thinking. Our experienced teachers engage students with hands-on experiments and real-world applications, ensuring that they not only learn but also appreciate the beauty of science in everyday life.
         </Typography>
       </Box>
       <Grid2 container spacing={3}>

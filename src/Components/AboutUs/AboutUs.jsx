@@ -140,10 +140,7 @@ const AboutUs = () => {
               <span style={{ color: "#FDA31B" }}>Inspires</span> You More.
             </Typography>
             <Typography variant="body1" sx={{ color: "#757f95" }}>
-              There are many variations of passages available but the majority
-              have suffered alteration in some form by injected humour
-              randomised words which don't look even slightly believable. If you
-              are going to use passage.
+              Our advanced teaching system leverages innovative methods and technology to create personalized learning experiences. By fostering collaboration and engagement, we empower students to think critically and succeed in a dynamic educational landscape.
             </Typography>
           </Box>
           <Box>
@@ -185,8 +182,7 @@ const AboutUs = () => {
                         variant="body1"
                         sx={{ color: "#757f95", wordWrap: "break-word" }}
                       >
-                        It is a long established fact that reader will to using
-                        content.
+                        Empowering students through personalized learning.
                       </Typography>
                     </Box>
                   </Grid>
@@ -217,18 +213,11 @@ const AboutUs = () => {
                   </Grid>
                   <Grid size={{ xs: 6, md: 9 }} sx={{ mt: 3 }}>
                     <Box>
-                      <Typography
-                        variant="subtitle1"
-                        sx={{ fontWeight: "bold" }}
-                      >
-                        International Hubs
+                      <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
+                        Global Hubs
                       </Typography>
-                      <Typography
-                        variant="body1"
-                        sx={{ color: "#757f95", wordWrap: "break-word" }}
-                      >
-                        It is a long established fact that reader will to using
-                        content.
+                      <Typography variant="body1" sx={{ color: "#757f95" }}>
+                        Connecting minds, shaping futures.
                       </Typography>
                     </Box>
                   </Grid>
@@ -254,9 +243,7 @@ const AboutUs = () => {
                   }}
                 >
                   <Typography variant="body1" sx={{ my: 0 }}>
-                    It is a long-established fact that a reader will be
-                    distracted by the content of a page when looking at its
-                    reader for the long words layout.
+                    "This program transformed my career! The hands-on approach and expert guidance helped me land my dream job in tech."
                   </Typography>
                 </Box>
               </Grid>

@@ -5,30 +5,30 @@ import { library, money, scholarship, teacher } from "../../assets/icons";
 const items = [
   {
     id: "01",
-    title: "Scholarship Facility",
+    title: "Scholarship Opportunities",
     description:
-      "It is a long established fact that a reader will be distracted.",
+      "Empower your future with our extensive scholarship programs.",
     icon: scholarship,
   },
   {
     id: "02",
-    title: "Skilled Lecturers",
+    title: "Expert Instructors",
     description:
-      "It is a long established fact that a reader will be distracted.",
+      "Learn from experienced professionals committed to your growth.",
     icon: teacher,
   },
   {
     id: "03",
-    title: "Book Library Facility",
+    title: "Comprehensive Library",
     description:
-      "It is a long established fact that a reader will be distracted.",
+      "Explore a rich collection of books and resources for your studies.",
     icon: library,
   },
   {
     id: "04",
-    title: "Affordable Price",
+    title: "Affordable Tuition",
     description:
-      "It is a long established fact that a reader will be distracted.",
+      "Receive quality education at competitive prices.",
     icon: money,
   },
 ];
@@ -50,6 +50,7 @@ const Activites = () => (
               padding: 3,
               borderRadius: 10,
               borderBottomLeftRadius: 0,
+              height: "80%",
             }}
           >
             <Box

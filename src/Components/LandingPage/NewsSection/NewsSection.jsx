@@ -8,25 +8,25 @@ const blogPosts = [
   {
     id: 1,
     date: "June 18, 2024",
-    author: "By Alicia Davis",
+    author: "Dr. Ayesha Rahman",
     commentsCount: "03 Comments",
-    title: "There Are Many Variations Passage Have Suffered Available.",
+    title: "Exploring the Latest Trends in Artificial Intelligence.",
     image: news1,
   },
   {
     id: 2,
-    date: "June 18, 2024",
-    author: "By Alicia Davis",
-    commentsCount: "03 Comments",
-    title: "There Are Many Variations Passage Have Suffered Available.",
+    date: "June 19, 2024",
+    author: "Prof. Hasan Ahmed",
+    commentsCount: "05 Comments",
+    title: "Understanding Quantum Computing: A Beginner's Guide.",
     image: news2,
   },
   {
     id: 3,
-    date: "June 18, 2024",
-    author: "By Alicia Davis",
-    commentsCount: "03 Comments",
-    title: "There Are Many Variations Passage Have Suffered Available.",
+    date: "June 20, 2024",
+    author: "Fatima Noor",
+    commentsCount: "02 Comments",
+    title: "The Future of Cybersecurity: Challenges and Solutions.",
     image: news3,
   },
 ];
@@ -56,12 +56,11 @@ const NewsSection = () => {
           Latest News &<span style={{ color: "#FDA31B" }}> Blog</span>
         </Typography>
         <Typography variant="body1" sx={{ color: "#757f95" }}>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout.
+          Stay updated with the latest news from the Computer Science Department.
         </Typography>
       </Box>
 
-      <Grid2 container spacing={3}>
+      <Grid2 justifyContent="stretch" container spacing={3}>
         {blogPosts.map((post) => (
           <Grid2 item size={{ sm: 12, md: 6, lg: 4 }} key={post.id}>
             <NewsCard {...post} />

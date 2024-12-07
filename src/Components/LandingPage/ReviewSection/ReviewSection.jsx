@@ -10,7 +10,7 @@ const reviewData = [
     name: "Anthony Nicoll",
     role: "Student",
     review:
-      "There are many variations of tend to repeat chunks some all form necessary injected for the going are humour words.",
+      "The Computer Science Department provides an excellent learning environment that fosters innovation and creativity.",
     rating: 5,
     image: review1,
   },
@@ -19,7 +19,7 @@ const reviewData = [
     name: "Richard Lock",
     role: "Student",
     review:
-      "There are many variations of tend to repeat chunks some all form necessary injected for the going are humour words.",
+      "I have gained invaluable skills and knowledge that have prepared me for my future career in technology.",
     rating: 5,
     image: review2,
   },
@@ -28,7 +28,7 @@ const reviewData = [
     name: "Randal Grand",
     role: "Student",
     review:
-      "There are many variations of tend to repeat chunks some all form necessary injected for the going are humour words.",
+      "The support from faculty and peers has been instrumental in my academic success.",
     rating: 5,
     image: review3,
   },
@@ -37,7 +37,7 @@ const reviewData = [
     name: "Edward Miles",
     role: "Student",
     review:
-      "There are many variations of tend to repeat chunks some all form necessary injected for the going are humour words.",
+      "The hands-on projects and collaborative learning experiences have made my time here truly rewarding.",
     rating: 5,
     image: review4,
   },
@@ -46,7 +46,7 @@ const reviewData = [
     name: "Ninal Gordon",
     role: "Student",
     review:
-      "There are many variations of tend to repeat chunks some all form necessary injected for the going are humour words.",
+      "I appreciate the resources and opportunities available to students in the Computer Science Department.",
     rating: 5,
     image: review5,
   },
@@ -109,13 +109,12 @@ const ReviewSection = () => {
             What Our Students <span style={{ color: "#FDA31B" }}>Say's</span>
           </Typography>
           <Typography variant="body1" sx={{ color: "#fff" }}>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when many desktop and web page
-            editors looking at its layout.
+            As a Computer Science student at City University, I have gained invaluable knowledge and skills that have prepared me for the tech industry. The hands-on projects and supportive faculty have made my learning experience truly enriching.
           </Typography>
         </Box>
         <Grid2
           maxWidth="lg"
+          justifyContent="stretch"
           mx="auto"
           container
           spacing={3}
@@ -129,18 +128,22 @@ const ReviewSection = () => {
                 key={reviewData[reviewIndex].id}
                 sx={{ 
                   transition: "transform 1s ease-in-out, opacity 1s ease-in-out",  
-                  opacity: transition ? 0.7 : 1 
+                  opacity: transition ? 0.7 : 1,
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
                 }}
               >
                 <ReviewCard
                   key={reviewData[reviewIndex].id}
                   {...reviewData[reviewIndex]}
+                  sx={{ flexGrow: 1 }}
                 />
               </Grid2>
             );
           })}
         </Grid2>
-      </Box>
+        </Box>
     </Box>
   );
 };

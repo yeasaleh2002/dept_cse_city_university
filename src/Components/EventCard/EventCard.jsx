@@ -13,6 +13,7 @@ const EventCard = ({ title, date, time, location, description, imageUrl }) => {
         boxShadow: 4,
         borderRadius: 10,
         borderBottomLeftRadius: 0,
+        height: "100%",
       }}
     >
       <Stack
@@ -82,7 +83,7 @@ const EventCard = ({ title, date, time, location, description, imageUrl }) => {
         >
           {description}
         </Typography>
-        <Button
+        {/* <Button
           variant="contained"
           size="medium"
           sx={{
@@ -101,7 +102,7 @@ const EventCard = ({ title, date, time, location, description, imageUrl }) => {
           endIcon={<KeyboardArrowRightIcon sx={{ color: "white" }} />}
         >
           Join Event
-        </Button>
+        </Button> */}
       </Box>
     </Box>
   );
