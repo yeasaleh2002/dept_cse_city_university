@@ -6,10 +6,16 @@ const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  const getUser = () => {
-    // Assuming user details are stored in localStorage after login
-    const userDetails = localStorage.getItem("user");
-    setUser(userDetails ? JSON.parse(userDetails) : null);
+  const getUser = async () => {
+    const user_id = localStorage.getItem("user_id");
+    const { data, status } = await callPublicApi(
+      `student/students/${user_id}`,
+      "GET"
+    );
+
+    if (status === 200) {
+      setUser(data);
+    }
   };
 
   const login = async (username, password, role) => {
@@ -25,8 +31,9 @@ export const AuthProvider = ({ children }) => {
       const { data, status } = await callPublicApi(apiPath, "POST", loginData);
       if (status === 200) {
         localStorage.setItem("token", data.token);
-        role === "student" && localStorage.setItem("user_id", data.user_id);
-        setUser(data);
+        localStorage.setItem("user_id", data.user_id);
+        localStorage.setItem("role", role);
+        getUser();
         return data;
       } else {
         throw new Error(data.error || "Login failed!");
@@ -44,7 +51,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, getUser, login, logout }}>
+    <AuthContext.Provider value={{ user, getUser, getUser, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
