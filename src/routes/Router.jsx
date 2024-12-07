@@ -17,7 +17,7 @@ const {
   StudentNotification,
   ViewClassRoutine,
   ViewStudentResult,
-  Login: StudentLogin,
+  StudentLogin,
   TeacherLogin,
   ClassRoutine,
   EditTeacherProfile,

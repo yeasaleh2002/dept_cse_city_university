@@ -31,7 +31,7 @@ export const EditStudentClassTest_Lab = withSuspense(
   )
 );
 
-export const Login = withSuspense(
+export const StudentLogin = withSuspense(
   lazy(() => import("./Students/Login/LoginPage"))
 );
 

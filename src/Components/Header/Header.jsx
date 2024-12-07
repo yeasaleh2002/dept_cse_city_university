@@ -12,25 +12,29 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from '@mui/icons-material/Close';
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const handleDrawerToggle = () => setMobileOpen((prev) => !prev);
+  const handleDrawerToggle = (event) => {
+    event.stopPropagation();
+    setMobileOpen((prev) => !prev);
+  };
 
   const navItems = [
     // { navName: "Home", link: "/home" },
-    { navName: "Courses", link: "/courses" },
-    { navName: "Academics", link: "/academics" },
-    { navName: "Pages", link: "/pages" },
-    { navName: "Admissions", link: "/admissions" },
-    { navName: "Blog", link: "/blog" },
-    { navName: "Contact", link: "/contact" },
+    // { navName: "Courses", link: "/courses" },
+    // { navName: "Academics", link: "/academics" },
+    // { navName: "Pages", link: "/pages" },
+    // { navName: "Admissions", link: "/admissions" },
+    // { navName: "Blog", link: "/blog" },
+    // { navName: "Contact", link: "/contact" },
   ];
 
-  const renderNavItems = () => 
+  const renderNavItems = () =>
     navItems.map((item) => (
       <Button
         key={item.navName}
@@ -44,19 +48,59 @@ const Header = () => {
     ));
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", py: 2, px: 4 }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 3,
+        px: 4,
+      }}
+    >
+      <Box sx={{ ml: "auto", mr: 0, gap: 2 }}>
+        <IconButton
+          sx={{ border: "2px solid #FFA726", borderRadius: 1 }}
+          onClick={handleDrawerToggle}
+        >
+          <CloseIcon fontSize="small" sx={{ fill: "#FFA726" }} />
+        </IconButton>
+      </Box>
       <Typography component={Link} to="/" variant="h4" sx={{ flexGrow: 1 }}>
         <span style={{ color: "#FDA31B" }}>edu</span>ka
       </Typography>
       <Divider />
       {renderNavItems()}
       <Button
+        component={Link}
+        to="/student/login"
+        variant="outlined"
+        color="secondary"
+        sx={{
+          border: "1px solid #FFA726",
+          color: "#FFA726",
+          fontWeight: "bold",
+          py: 1.3,
+          px: 5,
+          borderRadius: 10,
+          borderBottomLeftRadius: 0,
+        }}
+      >
+        Login
+      </Button>
+      <Button
+        component={Link}
+        to="/admission"
         variant="contained"
         color="secondary"
         sx={{
-          marginLeft: "auto",
           backgroundColor: "#FFA726",
           color: "white",
+          py: 1.3,
+          px: 5,
+          borderRadius: 10,
+          borderBottomLeftRadius: 0,
         }}
       >
         Apply Now
@@ -67,19 +111,24 @@ const Header = () => {
   return (
     <AppBar
       position="sticky"
-      sx={{ backgroundColor: "#FFFFFF", color: "black", py: 1 }}
+      sx={{ backgroundColor: "#FFFFFF", color: "black", py: 1.4 }}
     >
-      <Box sx={{ width: "100%" }}>
+      <Box
+        sx={{
+          maxWidth: "lg",
+          mx: "auto",
+          width: "100%",
+        }}
+      >
         <Box
-          maxWidth="lg"
-          marginX="auto"
           sx={{
-            px: { xs: 2, md: 4, lg: 0 },
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            width: "100%",
+            px: { xs: 2, md: 4 },
             py: 1,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 2,
+            flexGrow: 1,
           }}
         >
           <Typography component={Link} to="/" variant="h4" sx={{ flexGrow: 1 }}>
@@ -104,13 +153,36 @@ const Header = () => {
               }}
             >
               {renderNavItems()}
+
               <Button
+                component={Link}
+                to="/student/login"
+                variant="outlined"
+                color="secondary"
+                sx={{
+                  border: "1px solid #FFA726",
+                  color: "#FFA726",
+                  fontWeight: "bold",
+                  py: 1.3,
+                  px: 5,
+                  borderRadius: 10,
+                  borderBottomLeftRadius: 0,
+                }}
+              >
+                Login
+              </Button>
+              <Button
+                component={Link}
+                to="/admission"
                 variant="contained"
                 color="secondary"
                 sx={{
-                  marginLeft: "auto",
                   backgroundColor: "#FFA726",
                   color: "white",
+                  py: 1.3,
+                  px: 3,
+                  borderRadius: 10,
+                  borderBottomLeftRadius: 0,
                 }}
               >
                 Apply Now
