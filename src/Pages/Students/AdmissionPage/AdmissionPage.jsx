@@ -208,14 +208,14 @@ const AdmissionPage = () => {
                 Academic Information
               </Typography>
               <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
+                {/* <Grid item xs={12} md={6}>
                   <TextField
                     fullWidth
                     label="Batch"
                     variant="outlined"
                     name="batch"
                   />
-                </Grid>
+                </Grid> */}
                 <Grid item xs={12} md={6}>
                   <TextField
                     fullWidth
