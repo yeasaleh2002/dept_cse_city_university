@@ -53,6 +53,11 @@ const {
   TeacherAddExperience,
   TeacherAddDegree,
   TeacherPublishResultList,
+  About,
+  PrivacyPolicy,
+  TermsAndCondition,
+  FAQ,
+  ContactUs,
 } = Pages;
 
 export const router = createBrowserRouter([
@@ -63,6 +68,11 @@ export const router = createBrowserRouter([
     children: [
       { path: "/", element: <LandingPage /> },
       { path: "/home", element: <LandingPage /> },
+      { path: "/about-us", element: <About /> },
+      { path: "/privacy-policy", element: <PrivacyPolicy /> },
+      { path: "/terms-and-conditions", element: <TermsAndCondition /> },
+      { path: "/faq", element: <FAQ /> },
+      { path: "/contact-us", element: <ContactUs /> },
       {
         path: "/admission",
         element: <AdmissionPage />

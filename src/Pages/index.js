@@ -9,6 +9,15 @@ export const ErrorPage = withSuspense(lazy(() => import("./Public/ErrorPage")));
 export const NotFoundPage = withSuspense(
   lazy(() => import("./Public/NotFoundPage"))
 );
+export const About = withSuspense(lazy(() => import("./Public/About")));
+export const ContactUs = withSuspense(lazy(() => import("./Public/ContactUs")));
+export const FAQ = withSuspense(lazy(() => import("./Public/FAQ")));
+export const PrivacyPolicy = withSuspense(
+  lazy(() => import("./Public/PrivacyPolicy"))
+);
+export const TermsAndCondition = withSuspense(
+  lazy(() => import("./Public/TermsAndCondition"))
+);
 
 // Students pages
 export const AddStudentClassTest_Lab = withSuspense(
@@ -107,7 +116,9 @@ export const TeacherAddDegree = withSuspense(
 );
 
 export const TeacherPublishResultList = withSuspense(
-  lazy(() => import("./Teachers/TeacherPublishResultList/TeacherPublishResultList"))
+  lazy(() =>
+    import("./Teachers/TeacherPublishResultList/TeacherPublishResultList")
+  )
 );
 
 // Admin pages
@@ -206,5 +217,3 @@ export const PostStudentResult = withSuspense(
 export const AdminAddSubject = withSuspense(
   lazy(() => import("./Admin/AdminAddSubject/AdminAddSubject"))
 );
-
-
