@@ -19,6 +19,36 @@ const AdmissionPage = () => {
   const handleAdd = async (e) => {
     e.preventDefault();
     const form = e.target;
+    const formData = new FormData();
+  
+   
+    formData.append("first_name", form.first_name.value);
+    formData.append("last_name", form.last_name.value);
+    formData.append("email", form.email.value);
+    formData.append("phone", form.phone.value);
+    formData.append("date_of_birth", form.date_of_birth.value);
+    formData.append("address", form.address.value);
+    formData.append("gender", form.gender.value);
+    formData.append("photo", form.photo.files[0]);
+    formData.append("father_name", form.father_name.value);
+    formData.append("mother_name", form.mother_name.value);
+    formData.append("batch", form.batch.value);
+    formData.append("student_id", form.student_id.value);
+    formData.append("Batch_name", form.batch_name.value);
+    formData.append("ssc_roll", form.ssc_roll.value);
+    formData.append("ssc_reg", form.ssc_reg.value);
+    formData.append("ssc_passing_year", form.ssc_passing_year.value);
+    formData.append("ssc_result", form.ssc_result.value);
+    formData.append("ssc_school", form.ssc_school.value);
+    formData.append("ssc_board", form.ssc_board.value);
+    formData.append("ssc_group", form.ssc_group.value);
+    formData.append("hsc_roll", form.hsc_roll.value);
+    formData.append("hsc_reg", form.hsc_reg.value);
+    formData.append("hsc_passing_year", form.hsc_passing_year.value);
+    formData.append("hsc_result", form.hsc_result.value);
+    formData.append("hsc_college", form.hsc_college.value);
+    formData.append("hsc_board", form.hsc_board.value);
+    formData.append("hsc_group", form.hsc_group.value);
 
     const applicationData = {
       first_name: form.first_name.value,
@@ -85,6 +115,7 @@ const AdmissionPage = () => {
       }
    
   };
+  
 
   return (
     <div>
