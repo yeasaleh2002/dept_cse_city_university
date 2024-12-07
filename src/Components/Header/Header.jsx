@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from '@mui/icons-material/Close';
 import { useAuth } from "../../contexts/AuthContext";
+import { logo_main } from "../../assets/logos";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -135,7 +136,6 @@ const Header = () => {
         <Box
           sx={{
             px: { xs: 2, md: 4 },
-            py: 1,
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
@@ -143,9 +143,10 @@ const Header = () => {
             flexGrow: 1,
           }}
         >
-          <Typography component={Link} to="/" variant="h4" sx={{ flexGrow: 1 }}>
-            <span style={{ color: "#FDA31B" }}>edu</span>ka
-          </Typography>
+          <Link style={{ marginLeft: "-2rem" }} to="/">
+            <img src={logo_main} alt="logo" style={{ width: "100px", height: "auto" }} />
+          </Link>
+        
           {isMobile ? (
             <IconButton
               color="inherit"
