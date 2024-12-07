@@ -50,7 +50,7 @@ const OfferSection = () => {
               }}
             />
             <Typography variant="h3" sx={{ fontWeight: "bold" }}>
-              Our 20% Offer Running - Join Today For Your University
+              Our 20% Offer Running - Join Today For Our Department
             </Typography>
             <Typography
               variant="body1"

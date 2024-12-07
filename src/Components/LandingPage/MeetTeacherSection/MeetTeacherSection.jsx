@@ -5,31 +5,31 @@ import TeacherCard from "../../TeacherCard/TeacherCard";
 import { teacher1, teacher2, teacher3, teacher4 } from "../../../assets/images";
 import { callPublicApi } from "../../../utils/api";
 
-const teachers = [
+const defaultTeachers = [
   {
     id: 1,
-    name: "John Doe",
+    name: "Rahim Khan",
     subject: "Mathematics",
     designation: "Professor",
-    image: teacher1,
+    image: teacher3,
   },
   {
     id: 2,
-    name: "Jane Smith",
+    name: "Sultana Begum",
     subject: "Science",
     designation: "Associate Professor",
     image: teacher2,
   },
   {
     id: 3,
-    name: "Alice Johnson",
+    name: "Amina Sultana",
     subject: "English",
     designation: "Assistant Professor",
-    image: teacher3,
+    image: teacher1,
   },
   {
     id: 4,
-    name: "Mark Brown",
+    name: "Fatima Ali",
     subject: "History",
     designation: "Professor",
     image: teacher4,
@@ -37,19 +37,18 @@ const teachers = [
 ];
 
 const MeetTeacherSection = () => {
-  const [teachers, setTeachers] = useState([]);
+  const [teachers, setTeachers] = useState(defaultTeachers);
 
-  useEffect(() => {
-    const { data, status  } = callPublicApi("teacher/teachers/", "GET");
-    if (status === 200) {
-      console.log(data);
-      setTeachers(data);
-    }
-  }, []);
-
-
-
-
+  // useEffect(() => {
+  //   const { data, status  } = callPublicApi("teacher/teachers/", "GET");
+  //   if (status === 200) {
+  //     if (data.length > 0) {
+  //       setTeachers(data);
+  //     } else {
+  //       setTeachers(defaultTeachers);
+  //     }
+  //   } 
+  // }, []);
 
 
   return (

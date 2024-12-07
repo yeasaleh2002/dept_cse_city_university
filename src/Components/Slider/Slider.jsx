@@ -1,32 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { IconButton, Typography, Button, Box, Grid2 } from "@mui/material";
-import { bg_slide_1, bg_slide_2, bg_slide_3 } from "../../assets/images";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import SchoolIcon from "@mui/icons-material/School";
 import { Link } from "react-router-dom";
+import { new_slide_1, new_slide_2, new_slide_3 } from "../../assets/images";
 
 const slides = [
   {
     id: 1,
-    image: bg_slide_1,
+    image: new_slide_1,
     subheading: "Welcome to Tech Innovators!",
-    heading: "Leading the Future of Computer Science",
-    description: "Join us to master cutting-edge technologies and drive innovation.",
+    heading: "Leading the Future of Computer Science at City$ University$",
+    description: "Join us to master cutting-edge technologies and become a catalyst for innovation that shapes the future.",
   },
   {
     id: 2,
-    image: bg_slide_2,
+    image: new_slide_2,
     subheading: "Become a Tech Leader!",
-    heading: "Empowering Future Innovators",
-    description: "Collaborate with industry experts and enhance your skills in a dynamic environment.",
+    heading: "Empowering $Future $Innovators in a Thriving Community",
+    description: "Collaborate with industry experts and enhance your skills in a dynamic environment that fosters leadership.",
   },
   {
     id: 3,
-    image: bg_slide_3,
+    image: new_slide_3,
     subheading: "Shape Your Career!",
-    heading: "Unlock Your Potential in Tech",
-    description: "Gain hands-on experience and access to top-tier resources to achieve your career aspirations.",
+    heading: "Unlock Your Full $Potential in the Tech Industry",
+    description: "Gain hands-on experience and access to top-tier resources to turn your career aspirations into reality.",
   },
 ];
 
@@ -56,7 +56,7 @@ const Slider = () => {
           backgroundImage: `url(${slides[currentSlide].image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "blur(3px) grayscale(80%)",
+          filter: "blur(1.5px) grayscale(80%)",
           boxShadow: "inset 0 0 20px rgba(0, 0, 0, 1)",
           backgroundColor: "rgba(0, 0, 0, 0.95)",
           position: "absolute",
@@ -77,7 +77,7 @@ const Slider = () => {
             paddingY: { xs: 0, md: 5 },
             gap: 2,
             mb: 10,
-            minHeight: "60vh",
+            minHeight: "70vh",
           }}
           size={{ xs: 12, md: 6 }}
         >
@@ -101,7 +101,7 @@ const Slider = () => {
               <SchoolIcon sx={{ color: "#FDA31B" }} /> {slides[currentSlide].subheading}
             </Typography>
 
-            <Typography variant="h3" fontWeight="bold" mb={2}>
+            <Typography variant="h2" fontWeight="bold" mb={2}>
               {slides[currentSlide].heading.split(" ").map((part, index) => (
                 <span key={part}>
                   {part.includes("$") ? (
@@ -114,7 +114,7 @@ const Slider = () => {
               ))}
             </Typography>
 
-            <Typography variant="body1" mb={2}>
+            <Typography variant="subtitle1" mb={2}>
               {slides[currentSlide].description}
             </Typography>
             <Box sx={{ display: "flex", justifyContent: "end", gap: 3 }}>
