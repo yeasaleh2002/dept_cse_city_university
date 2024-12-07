@@ -68,10 +68,10 @@ const AdmissionPage = () => {
         applicationData
       );
 
-      toast.success("Application submitted successfully!");
+      alert("Application submitted successfully!");
       navigate("/student/login");
     } catch (error) {
-      toast.error("An error occurred while submitting the application.");
+      alert("An error occurred while submitting the application.");
     }
   };
 
