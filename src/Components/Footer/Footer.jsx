@@ -18,6 +18,7 @@ import {
   YouTube,
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { logo_main } from "../../assets/logos";
 
 const Footer = () => {
   return (
@@ -35,9 +36,20 @@ const Footer = () => {
         }}
       >
         <Box sx={{ flex: "1 1 250px" }}>
-          <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2 }}>
-            <span style={{ color: "#FDA31B" }}>edu</span>ka
-          </Typography>
+          <Link
+            style={{
+              display: "inline-block",
+              textDecoration: "none",
+              backgroundColor: "white",
+              padding: "2px 15px",
+              borderRadius: "10px",
+              marginBottom: "10px",
+            }}
+            to="/"
+          >
+            <img src={logo_main} alt="logo" style={{ width: "100px" }} />
+          </Link>
+          
           <Typography variant="body2" sx={{ mb: 2 }}>
             Welcome to City University, Ashuliya Savar. We are dedicated to
             providing quality education and fostering a vibrant learning
@@ -198,9 +210,7 @@ const Footer = () => {
           }}
         >
           <Typography variant="body2">
-            &copy; Copyright 2024{" "}
-            <span style={{ color: "#FDA31B", fontWeight: "bold" }}>Eduka</span>{" "}
-            All Rights Reserved.
+            &copy; {new Date().getFullYear()} All Rights Reserved to <a href="https://computerclub-cityuniversity.netlify.app/developers" target="_blank" style={{ color: "#FDA31B", fontWeight: "bold", textDecoration: "none" }}>Developers Team</a>.
           </Typography>
           <Box>
             <a href="https://city-uni-dpt-api.onrender.com/admin">

@@ -49,6 +49,7 @@ const Slider = () => {
         height: "auto",
         overflow: "hidden",
         backgroundPosition: "center",
+        py: 10,
       }}
     >
       <Box
@@ -77,7 +78,7 @@ const Slider = () => {
             paddingY: { xs: 0, md: 5 },
             gap: 2,
             mb: 10,
-            minHeight: "70vh",
+            minHeight: "60vh",
           }}
           size={{ xs: 12, md: 6 }}
         >
@@ -101,7 +102,7 @@ const Slider = () => {
               <SchoolIcon sx={{ color: "#FDA31B" }} /> {slides[currentSlide].subheading}
             </Typography>
 
-            <Typography variant="h2" fontWeight="bold" mb={2}>
+            <Typography variant="h3" fontWeight="bold" mb={2}>
               {slides[currentSlide].heading.split(" ").map((part, index) => (
                 <span key={part}>
                   {part.includes("$") ? (
@@ -174,7 +175,7 @@ const Slider = () => {
           top: "50%",
           left: "20px",
           transform: "translateY(-50%)",
-          backgroundColor: "rgba(63, 73, 90, 0.6)",
+          backgroundColor: "rgba(63, 73, 90, 0.3)",
           borderRadius: "50%",
           color: "black",
           "&:hover": {
@@ -193,7 +194,7 @@ const Slider = () => {
           top: "50%",
           right: "20px",
           transform: "translateY(-50%)",
-          backgroundColor: "rgba(63, 73, 90, 0.6)",
+          backgroundColor: "rgba(63, 73, 90, 0.3)",
           borderRadius: "50%",
           color: "black",
           "&:hover": {

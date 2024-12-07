@@ -9,10 +9,13 @@ import {
   useTheme,
   useMediaQuery,
   Divider,
+  Avatar,
+  Menu,
+  MenuItem,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
 import { useAuth } from "../../contexts/AuthContext";
 import { logo_main } from "../../assets/logos";
 
@@ -20,8 +23,9 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const navigate = useNavigate();
 
-  const { user, getUser } = useAuth();
+  const { user, getUser, logout } = useAuth();
 
   useEffect(() => {
     getUser();
@@ -32,16 +36,20 @@ const Header = () => {
     setMobileOpen((prev) => !prev);
   };
 
-  console.log(user);
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleOpenMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleCloseMenu = () => {
+    setAnchorEl(null);
+  };
 
   const navItems = [
-    // { navName: "Home", link: "/home" },
-    // { navName: "Courses", link: "/courses" },
-    // { navName: "Academics", link: "/academics" },
-    // { navName: "Pages", link: "/pages" },
-    // { navName: "Admissions", link: "/admissions" },
-    // { navName: "Blog", link: "/blog" },
-    // { navName: "Contact", link: "/contact" },
+    { navName: "Courses", link: "/courses" },
+    { navName: "Academics", link: "/academics" },
+    { navName: "Contact", link: "/contact" },
   ];
 
   const renderNavItems = () =>
@@ -57,6 +65,102 @@ const Header = () => {
       </Button>
     ));
 
+  const renderUserSection = () => {
+    if (user && user.username) {
+      return (
+        <Box sx={{ display: "flex", alignItems: "center", gap: 1, pl: 5 }}>
+        <Typography
+          variant="subtitle1"
+          color="inherit"
+          sx={{
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {user.first_name} {user.last_name}
+        </Typography>
+        <IconButton onClick={handleOpenMenu}>
+          <Avatar
+            src={user.photo}
+            alt="user"
+            sx={{ width: 40, height: 40, borderRadius: 2 }}
+          />
+        </IconButton>
+        <Menu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={handleCloseMenu}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "right",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+        >
+          <MenuItem
+            onClick={() => {
+              handleCloseMenu();
+              navigate("/student/profile");
+            }}
+          >
+            View Profile
+          </MenuItem>
+          <MenuItem
+            onClick={() => {
+              handleCloseMenu();
+              logout();
+              navigate("/student/login");
+            }}
+          >
+            Logout
+          </MenuItem>
+        </Menu>
+      </Box>
+      );
+    } else {
+      return (
+        <>
+          <Button
+            component={Link}
+            to="/student/login"
+            variant="outlined"
+            color="secondary"
+            sx={{
+              border: "1px solid #FFA726",
+              color: "#FFA726",
+              fontWeight: "bold",
+              py: 1.3,
+              px: 5,
+              borderRadius: 10,
+              borderBottomLeftRadius: 0,
+            }}
+          >
+            Login
+          </Button>
+          <Button
+            component={Link}
+            to="/admission"
+            variant="contained"
+            color="secondary"
+            sx={{
+              backgroundColor: "#FFA726",
+              color: "white",
+              py: 1.3,
+              px: 3,
+              borderRadius: 10,
+              borderBottomLeftRadius: 0,
+            }}
+          >
+            Admission
+          </Button>
+        </>
+      );
+    }
+  };
+
   const drawer = (
     <Box
       onClick={handleDrawerToggle}
@@ -67,20 +171,33 @@ const Header = () => {
         alignItems: "center",
         gap: 3,
         px: 4,
-        py: 3,
+        py: 1,
       }}
     >
-      <Box sx={{ ml: "auto", mr: 0, gap: 2 }}>
+      <Box
+        sx={{
+          gap: 2,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          width: "100%",
+        }}
+      >
+        <Link style={{ marginLeft: "-1rem" }} to="/">
+          <img
+            src={logo_main}
+            alt="logo"
+            style={{ width: "100px", height: "auto" }}
+          />
+        </Link>
         <IconButton
-          sx={{ border: "2px solid #FFA726", borderRadius: 1 }}
+          size="small"
+          sx={{ border: "3px solid #FFA726" }}
           onClick={handleDrawerToggle}
         >
           <CloseIcon fontSize="small" sx={{ fill: "#FFA726" }} />
         </IconButton>
       </Box>
-      <Typography component={Link} to="/" variant="h4" sx={{ flexGrow: 1 }}>
-        <span style={{ color: "#FDA31B" }}>edu</span>ka
-      </Typography>
       <Divider />
       {renderNavItems()}
       <Button
@@ -116,7 +233,7 @@ const Header = () => {
           width: "100%",
         }}
       >
-        Apply Now
+        Admission
       </Button>
     </Box>
   );
@@ -141,12 +258,17 @@ const Header = () => {
             justifyContent: "space-between",
             gap: 2,
             flexGrow: 1,
+            ml: { xs: 2, md: 0 },
           }}
         >
           <Link style={{ marginLeft: "-2rem" }} to="/">
-            <img src={logo_main} alt="logo" style={{ width: "100px", height: "auto" }} />
+            <img
+              src={logo_main}
+              alt="logo"
+              style={{ width: "100px", height: "auto" }}
+            />
           </Link>
-        
+
           {isMobile ? (
             <IconButton
               color="inherit"
@@ -166,40 +288,7 @@ const Header = () => {
               }}
             >
               {renderNavItems()}
-
-              <Button
-                component={Link}
-                to="/student/login"
-                variant="outlined"
-                color="secondary"
-                sx={{
-                  border: "1px solid #FFA726",
-                  color: "#FFA726",
-                  fontWeight: "bold",
-                  py: 1.3,
-                  px: 5,
-                  borderRadius: 10,
-                  borderBottomLeftRadius: 0,
-                }}
-              >
-                Login
-              </Button>
-              <Button
-                component={Link}
-                to="/admission"
-                variant="contained"
-                color="secondary"
-                sx={{
-                  backgroundColor: "#FFA726",
-                  color: "white",
-                  py: 1.3,
-                  px: 3,
-                  borderRadius: 10,
-                  borderBottomLeftRadius: 0,
-                }}
-              >
-                Apply Now
-              </Button>
+              {renderUserSection()}
             </Box>
           )}
         </Box>
