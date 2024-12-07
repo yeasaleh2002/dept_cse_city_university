@@ -16,3 +16,5 @@ const TermsAndCondition = () => {
     </div>
   );
 };
+
+export default TermsAndCondition;
