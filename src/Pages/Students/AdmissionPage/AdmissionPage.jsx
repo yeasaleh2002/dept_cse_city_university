@@ -9,15 +9,18 @@ import {
   Typography,
   Grid,
 } from "@mui/material";
+import { callPublicApi } from "../../../utils/api";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const AdmissionPage = () => {
+  const navigate = useNavigate();
   const breadcrumbs = [
     { title: "Home", link: "/" },
     { title: "Application Form", link: "/application" },
   ];
 
-
-  const handleAdd = (e) => {
+  const handleAdd = async (e) => {
     e.preventDefault();
     const form = e.target;
 
@@ -25,16 +28,21 @@ const AdmissionPage = () => {
       first_name: form.first_name.value,
       last_name: form.last_name.value,
       email: form.email.value,
+      username: form.email.value,
       phone: form.phone.value,
       date_of_birth: form.date_of_birth.value,
       address: form.address.value,
-      gender: form.gender.value,
-      photo: form.photo.files[0],
+      gender:
+        form.gender.value === "Male"
+          ? "M"
+          : form.gender.value === "Female"
+          ? "F"
+          : "O",
+      photo: form.photo.files[0] || null,
       father_name: form.father_name.value,
       mother_name: form.mother_name.value,
-      batch: form.batch.value,
+      batch: 1,
       student_id: form.student_id.value,
-      Batch_name: form.batch_name.value,
       ssc_roll: form.ssc_roll.value,
       ssc_reg: form.ssc_reg.value,
       ssc_passing_year: form.ssc_passing_year.value,
@@ -50,31 +58,27 @@ const AdmissionPage = () => {
       hsc_board: form.hsc_board.value,
       hsc_group: form.hsc_group.value,
     };
-    console.log("Data", applicationData);
 
+    console.log("form data", applicationData);
 
-    fetch("https://city-uni-dpt-api.vercel.app/student/students/", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(applicationData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data) {
-            console.log("form has been added successfully");
-            alert("form has been added successfully");
-        }
-    });
-    
+    try {
+      const { data, status } = await callPublicApi(
+        "student/students/",
+        "POST",
+        applicationData
+      );
 
+      toast.success("Application submitted successfully!");
+      navigate("/student/login");
+    } catch (error) {
+      toast.error("An error occurred while submitting the application.");
+    }
   };
 
   return (
     <div>
       <BreadcrumbsComponent title="Admission Form" breadcrumbs={breadcrumbs} />
-      <Container maxWidth="lg">
+      <Box maxWidth="lg" sx={{ marginTop: "20px", marginBottom: "20px" }}>
         <div style={{ padding: "" }} className="bg-[var(--bg-color)]">
           <Box
             sx={{
@@ -223,14 +227,6 @@ const AdmissionPage = () => {
                 <Grid item xs={12} md={6}>
                   <TextField
                     fullWidth
-                    label="Batch Name"
-                    variant="outlined"
-                    name="batch_name"
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <TextField
-                    fullWidth
                     label="SSC Roll"
                     variant="outlined"
                     name="ssc_roll"
@@ -360,7 +356,7 @@ const AdmissionPage = () => {
             </form>
           </Box>
         </div>
-      </Container>
+      </Box>
     </div>
   );
 };
