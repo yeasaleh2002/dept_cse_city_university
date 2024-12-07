@@ -18,7 +18,7 @@ export const AddStudentClassTest_Lab = withSuspense(
 );
 
 export const AdmissionPage = withSuspense(
-  lazy(() => import("./Students/AdmissionPage/AdmissionPage"))
+  lazy(() => import("./Students/AdmissionPage"))
 );
 
 export const ApplyForASemister = withSuspense(
