@@ -9,6 +9,7 @@ import {
   Grid2,
   Divider,
   Box,
+  Button,
 } from "@mui/material";
 
 const StudentProfile = () => {
@@ -25,25 +26,41 @@ const StudentProfile = () => {
           borderRadius: "12px",
         }}
       >
-        <CardHeader
-          avatar={
-            <Avatar sx={{ bgcolor: "primary.main", width: 80, height: 80 }}>
-              {user?.first_name?.charAt(0)}
-            </Avatar>
-          }
-          title={`${user?.first_name} ${user?.last_name}`}
-          subheader={`Student ID: ${user?.student_id} | Batch: ${user?.Batch_name}`}
-          titleTypographyProps={{
-            variant: "h4",
-            fontWeight: "bold",
-            sx: { fontSize: "1.5rem" },
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
           }}
-          subheaderTypographyProps={{
-            variant: "body2",
-            color: "text.secondary",
-            sx: { fontSize: "1rem" },
-          }}
-        />
+        >
+          <CardHeader
+            avatar={
+              <Avatar
+                src={user?.photo || user?.first_name?.charAt(0)}
+                sx={{ bgcolor: "primary.main", width: 80, height: 80 }}
+              >
+                {/* {user?.photo || user?.first_name?.charAt(0)} */}
+              </Avatar>
+            }
+            title={`${user?.first_name} ${user?.last_name}`}
+            subheader={`Student ID: ${user?.student_id} | Batch: ${user?.Batch_name}`}
+            titleTypographyProps={{
+              variant: "h4",
+              fontWeight: "bold",
+              sx: { fontSize: "1.5rem" },
+            }}
+            subheaderTypographyProps={{
+              variant: "body2",
+              color: "text.secondary",
+              sx: { fontSize: "1rem" },
+            }}
+          />
+          <div style={{ marginRight: "10px" }}>
+            <a href="https://city-uni-dpt-api.onrender.com/student/registrations/">
+              <Button variant="contained">Semester Registrations</Button>
+            </a>
+          </div>
+        </div>
         <Divider sx={{ margin: "1.5rem 0" }} />
         <CardContent>
           <Typography
