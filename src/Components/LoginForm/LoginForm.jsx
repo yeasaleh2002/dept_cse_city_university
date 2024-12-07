@@ -13,7 +13,6 @@ import BreadcrumbsComponent from "../BreadcrumbsComponent";
 import { styled } from "@mui/system";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { callPublicApi } from "../../utils/api";
 import { useAuth } from '../../contexts/AuthContext';
 
 const FullImage = styled("div")(({ pathname }) => ({
@@ -32,7 +31,7 @@ const FullImage = styled("div")(({ pathname }) => ({
 const LoginForm = () => {
   const { login } = useAuth();
   const pathname = window.location.pathname;
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
@@ -55,7 +54,7 @@ const LoginForm = () => {
 
   const validate = () => {
     const tempErrors = {
-      email: email ? "" : "Email is required.",
+      username: username ? "" : "Username is required.",
       password: password ? "" : "Password is required.",
     };
     setErrors(tempErrors);
@@ -67,7 +66,7 @@ const LoginForm = () => {
     if (validate()) {
       try {
         const role = pathname.includes("admin") ? "admin" : pathname.includes("teacher") ? "teacher" : "student";
-        const userData = await login(email, password, role);
+        const userData = await login(username, password, role);
 
         navigate(userData.role === "admin" ? "/admin/dashboard" : userData.role === "teacher" ? "/teacher/dashboard" : "/student/profile");
         toast.success("Login Successful!");
@@ -121,19 +120,19 @@ const LoginForm = () => {
                   fontSize: 16,
                 }}
               >
-                {pathname === "/admin/login" ? "Username" : "Email"}
+                {pathname === "/admin/login" ? "Username" : "Username"}
                 <Typography color="error" component="span">*</Typography>
               </Typography>
               <TextField
                 variant="outlined"
                 fullWidth
-                type={pathname === "/admin/login" ? "text" : "email"}
+                type="text"
                 required
-                placeholder={pathname === "/admin/login" ? "Enter your username" : "Enter your email"}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                error={Boolean(errors.email)}
-                helperText={errors.email}
+                placeholder={pathname === "/admin/login" ? "Enter your username" : "Enter your username"}
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                error={Boolean(errors.username)}
+                helperText={errors.username}
               />
             </Box>
             <Box>
