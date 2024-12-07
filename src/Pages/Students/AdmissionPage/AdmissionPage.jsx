@@ -21,7 +21,7 @@ const AdmissionPage = () => {
     e.preventDefault();
     const form = e.target;
 
-    const formData = {
+    const applicationData = {
       first_name: form.first_name.value,
       last_name: form.last_name.value,
       email: form.email.value,
@@ -29,7 +29,7 @@ const AdmissionPage = () => {
       date_of_birth: form.date_of_birth.value,
       address: form.address.value,
       gender: form.gender.value,
-      // photo: form.photo.files[0],
+      photo: form.photo.files[0],
       father_name: form.father_name.value,
       mother_name: form.mother_name.value,
       batch: form.batch.value,
@@ -50,24 +50,23 @@ const AdmissionPage = () => {
       hsc_board: form.hsc_board.value,
       hsc_group: form.hsc_group.value,
     };
-    console.log("Data", formData);
+    console.log("Data", applicationData);
 
 
-    fetch("https://city-uni-dpt-api.onrender.com/student/students/", {
+    fetch("https://city-uni-dpt-api.vercel.app/student/students/", {
       method: "POST",
-      body: formData,
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(applicationData),
     })
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          console.log("Form has been added successfully");
-          alert("Form has been added successfully");
+            console.log("form has been added successfully");
+            alert("form has been added successfully");
         }
-      })
-      .catch((error) => {
-        console.error("Error submitting form:", error);
-        alert("Failed to submit the form. Please try again.");
-      });
+    });
     
 
   };
