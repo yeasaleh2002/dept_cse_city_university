@@ -19,7 +19,6 @@ const ReviewCard = ({ name, role, review, rating, image }) => {
       <Box
         sx={{
           backgroundColor: "white",
-          borderRadius: 2,
           padding: 2.5,
           position: "relative",
           borderRadius: 10,
