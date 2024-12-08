@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Box, Card, CardContent, Grid2, Typography } from "@mui/material";
-import { CourseCard } from "../..";
+import { Box, Card, CardContent, Grid2, Typography, Divider, Stack } from "@mui/material";
 import SchoolIcon from "@mui/icons-material/School";
 import { callPublicApi } from "../../../utils/api";
+import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
+
 
 const CheckCoursesSection = () => {
   const [coursesData, setCoursesData] = useState([]);
@@ -59,24 +60,81 @@ const CheckCoursesSection = () => {
       >
         {coursesData.map((course) => (
           <Grid2 size={{ xs: 6, md: 4, lg: 3 }} key={course.id}>
-            <Card variant="outlined">
-              <CardContent>
-                <Typography variant="h5" component="div">
+            <Card
+              sx={{
+                width: "auto",
+                boxShadow: 5,
+                borderRadius: 10,
+                borderBottomLeftRadius: 0,
+                pt:"10px"
+              }}
+            >
+              <Box sx={{ px: 3, py: 2, pt: 0 }}>
+                <Typography
+                  variant="h6"
+                  component="div"
+                  sx={{ fontWeight: "600", color: "#333", mb: 1 }}
+                >
                   {course?.course_title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Course Code: {course?.course_code}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Credit Fee: ${course?.credit_fee}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Credit: ${course?.credit}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Total Fee: ${course?.total_fee}
-                </Typography>
-              </CardContent>
+
+                <Divider />
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    gap: 10,
+                    my: 1,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: 2,
+                    }}
+                  >
+                    <Stack
+                      direction="row"
+                      alignItems="center"
+                      spacing={1}
+                      sx={{ my: 1 }}
+                    >
+                      <GroupsOutlinedIcon sx={{ fill: "#fda31b" }} />
+                      <Typography
+                        variant="subtitle2"
+                        color="#757f95"
+                        sx={{
+                          fontWeight: "600",
+                          mt: 0.5,
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        Credit: {course?.credit}
+                      </Typography>
+                    </Stack>
+
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        alignSelf: "end",
+                        fontWeight: "600",
+                        color: "#FFFFFF",
+                        bgcolor: "#fda31b",
+                        px: 2,
+                        py: 1,
+                        borderRadius: 10,
+                        borderBottomLeftRadius: 0,
+                        // ml: 5,
+                      }}
+                    >
+                      {course?.course_code}
+                    </Typography>
+                  </Box>
+                </Box>
+              </Box>
             </Card>
           </Grid2>
         ))}

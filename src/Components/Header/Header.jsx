@@ -49,7 +49,7 @@ const Header = () => {
   const navItems = [
     { navName: "Courses", link: "/courses" },
     { navName: "Academics", link: "/academics" },
-    { navName: "Contact", link: "/contact" },
+    { navName: "Contact", link: "/contact-us" },
   ];
 
   const renderNavItems = () =>
