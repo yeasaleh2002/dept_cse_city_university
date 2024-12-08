@@ -47,9 +47,9 @@ const Header = () => {
   };
 
   const navItems = [
-    { navName: "Courses", link: "/courses" },
-    { navName: "Academics", link: "/academics" },
-    { navName: "Contact", link: "/contact-us" },
+    { navName: "About Us", link: "/about-us" },
+    { navName: "Contact Us", link: "/contact-us" },
+    { navName: "FAQ's", link: "/faq" },
   ];
 
   const renderNavItems = () =>
