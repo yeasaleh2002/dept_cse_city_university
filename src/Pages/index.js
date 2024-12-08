@@ -73,6 +73,14 @@ export const ViewStudentResult = withSuspense(
 export const StudentProfile = withSuspense(
   lazy(() => import("./Students/StudentProfile"))
 );
+export const Announcement = withSuspense(
+  lazy(() => import("./Students/Announcement"))
+);
+export const Result = withSuspense(
+  lazy(() => import("./Students/Result"))
+);
+
+
 
 // Teachers pages
 export const TeacherLogin = withSuspense(
