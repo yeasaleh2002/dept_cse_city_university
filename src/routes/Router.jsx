@@ -76,6 +76,7 @@ export const router = createBrowserRouter([
       { path: "/terms-and-conditions", element: <TermsAndCondition /> },
       { path: "/faq", element: <FAQ /> },
       { path: "/contact-us", element: <ContactUs /> },
+      { path: "/announcements", element: <Announcement /> },
       {
         path: "/admission",
         element: <AdmissionPage />
@@ -92,7 +93,6 @@ export const router = createBrowserRouter([
       { path: "/student/class-routine", element: <ViewClassRoutine /> },
       { path: "/student/view-results", element: <ViewStudentResult /> },
       { path: "/student/profile", element: <StudentProfile /> },
-      { path: "/student/announcement", element: <Announcement /> },
       { path: "/student/result", element: <Result /> },
 
       // Teacher Routes

@@ -50,6 +50,7 @@ const Header = () => {
     { navName: "About Us", link: "/about-us" },
     { navName: "Contact Us", link: "/contact-us" },
     { navName: "FAQ's", link: "/faq" },
+    { navName: "Announcements", link: "/announcements" },
   ];
 
   const renderNavItems = () =>
@@ -130,6 +131,14 @@ const Header = () => {
               }}
             >
               View Profile
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                handleCloseMenu();
+                navigate("/student/result");
+              }}
+            >
+              Result
             </MenuItem>
             <MenuItem
               onClick={() => {
@@ -243,6 +252,24 @@ const Header = () => {
             }}
           >
             View Profile
+          </Button>
+          <Button
+            component={Link}
+            to="/student/result"
+            variant="outlined"
+            color="secondary"
+            sx={{
+              border: "1px solid #FFA726",
+              color: "#FFA726",
+              fontWeight: "bold",
+              py: 1.3,
+              px: 5,
+              borderRadius: 10,
+              borderBottomLeftRadius: 0,
+              width: "100%",
+            }}
+          >
+           Result
           </Button>
           <Button
             sx={{
