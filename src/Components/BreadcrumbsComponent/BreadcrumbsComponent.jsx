@@ -11,15 +11,17 @@ const BreadcrumbsComponent = ({ title, breadcrumbs }) => {
     <Box
       sx={{
         backgroundImage: `url(${breadcrumbsBg})`,
+        backgroundRepeat: "no-repeat",
+        backgroundColor: "#3B302A",
         backgroundSize: "cover",
         backgroundPosition: "center",
         color: "#fff",
-        py: 8,
+        py: { xs: 2, md: 3 },
         textAlign: "center",
       }}
     >
       <Container maxWidth="lg">
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom >
           {title}
         </Typography>
         <Breadcrumbs
